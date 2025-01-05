@@ -6,4 +6,4 @@ func _ready():
 	update()
 
 func update():
-	$CanvasLayer/TextureProgressBar.value = player.currentHealth  * 100 / player.maxHealth
+	$TextureProgressBar.value = player.currentHealth  * 100 / player.maxHealth

@@ -98,7 +98,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i8i8k"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0is6d"]
+radius = 12.5853
+height = 42.5964
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(1.415, 1.415)
@@ -111,4 +113,6 @@ animation = &"jump"
 frame_progress = 0.00161637
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_i8i8k")
+position = Vector2(0, 1.41343)
+scale = Vector2(0.73, 0.73)
+shape = SubResource("CapsuleShape2D_0is6d")
