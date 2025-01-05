@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://d2ruo5rx0buok"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qhs6d"]
-[ext_resource type="Texture2D" uid="uid://ce56hjs68gf51" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
+[ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jbrm"]
 atlas = ExtResource("2_cf8ah")
@@ -108,7 +108,7 @@ script = ExtResource("1_qhs6d")
 light_mask = 2
 sprite_frames = SubResource("SpriteFrames_k8v11")
 animation = &"jump"
-frame_progress = 0.47903
+frame_progress = 0.00161637
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i8i8k")
