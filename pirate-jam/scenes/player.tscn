@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2ruo5rx0buok"]
+[gd_scene load_steps=21 format=3 uid="uid://d2ruo5rx0buok"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qhs6d"]
 [ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
@@ -47,6 +47,26 @@ region = Rect2(250, 37, 50, 37)
 atlas = ExtResource("2_cf8ah")
 region = Rect2(300, 37, 50, 37)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uetqu"]
+atlas = ExtResource("2_cf8ah")
+region = Rect2(0, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr7qk"]
+atlas = ExtResource("2_cf8ah")
+region = Rect2(50, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e4aj"]
+atlas = ExtResource("2_cf8ah")
+region = Rect2(100, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8x5s"]
+atlas = ExtResource("2_cf8ah")
+region = Rect2(150, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqm8n"]
+atlas = ExtResource("2_cf8ah")
+region = Rect2(250, 222, 50, 37)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_k8v11"]
 animations = [{
 "frames": [{
@@ -64,7 +84,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -72,7 +92,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,7 +115,27 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uetqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr7qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e4aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8x5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqm8n")
+}],
+"loop": false,
+"name": &"sword_attack",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0is6d"]
@@ -109,10 +149,11 @@ script = ExtResource("1_qhs6d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
 sprite_frames = SubResource("SpriteFrames_k8v11")
-animation = &"jump"
-frame_progress = 0.00161637
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.41343)
 scale = Vector2(0.73, 0.73)
 shape = SubResource("CapsuleShape2D_0is6d")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
