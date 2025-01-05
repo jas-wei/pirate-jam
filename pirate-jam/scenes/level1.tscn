@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=5 format=3 uid="uid://bmcv1y5y2bwtf"]
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="1_bwavx"]
+[ext_resource type="PackedScene" uid="uid://bv05r8qx7d57c" path="res://scenes/health_bar.tscn" id="2_vk3rl"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="3_r01yj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3l6wv"]
 
@@ -17,3 +19,6 @@ shape = SubResource("WorldBoundaryShape2D_3l6wv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.1, 2.1)
+
+[node name="health_bar" parent="." instance=ExtResource("2_vk3rl")]
+script = ExtResource("3_r01yj")

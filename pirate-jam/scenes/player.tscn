@@ -101,12 +101,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8i8k"]
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(1.415, 1.415)
 script = ExtResource("1_qhs6d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
 sprite_frames = SubResource("SpriteFrames_k8v11")
 animation = &"jump"
-frame_progress = 0.69889
+frame_progress = 0.47903
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i8i8k")
