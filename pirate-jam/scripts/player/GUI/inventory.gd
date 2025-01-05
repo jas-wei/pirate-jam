@@ -6,11 +6,19 @@ var items_to_load := [
 ]
 
 func _ready() -> void:
-	for i in 24:
-		var slot := InventorySlot.new()
-		slot.init(ItemData.Type.MAIN, Vector2(32, 32))
+	# Create 24 inventory slots
+	for i in range(24):
+		var slot = InventorySlot.new()
+		slot._init(ItemData.Type.MAIN, Vector2(32, 32))
 		%Grid.add_child(slot)
-	for i in items_to_load.size:
+
+	# Load items and add them to slots
+	for i in range(items_to_load.size()):
 		var item = InventoryItem.new()
-		item.init(load(items_to_load[i]))
+		var item_data = load(items_to_load[i]) as ItemData
+		if item_data:
+			item._init(item_data)
+		else:
+			print("Error: Resource is not of type ItemData at index ", i)
+
 		%Grid.get_child(i).add_child(item)

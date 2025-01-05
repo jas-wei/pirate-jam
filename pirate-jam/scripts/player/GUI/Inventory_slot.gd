@@ -3,7 +3,7 @@ extends PanelContainer
 
 @export var type : ItemData.Type
 
-func _init(t: ItemData.Type, cms: Vector2) -> void:
+func _init(t: ItemData.Type = ItemData.Type.MAIN, cms: Vector2 = Vector2.ZERO):
 	type = t
 	custom_minimum_size = cms
 	
