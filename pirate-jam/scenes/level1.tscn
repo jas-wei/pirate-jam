@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=6 format=3 uid="uid://bmcv1y5y2bwtf"]
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="1_bwavx"]
 [ext_resource type="PackedScene" uid="uid://bv05r8qx7d57c" path="res://scenes/health_bar.tscn" id="2_vk3rl"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="3_r01yj"]
+[ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_r04ph"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3l6wv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qh4f2"]
+texture = ExtResource("4_r04ph")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+# Additional polygon data for the tileset here...
+sources/0 = SubResource("TileSetAtlasSource_qh4f2")
+
+[sub_resource type="TileSet" id="TileSet_h002c"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qh4f2")
 
 [node name="level1" type="Node2D"]
 
@@ -22,3 +33,12 @@ zoom = Vector2(2.1, 2.1)
 
 [node name="health_bar" parent="." instance=ExtResource("2_vk3rl")]
 script = ExtResource("3_r01yj")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-2, 0)
+tile_set = SubResource("TileSet_h002c")
+format = 2
+layer_0/name = "background"
+layer_0/tile_data = PackedInt32Array(-327691, 196608, 13, -262155, 196608, 13)
+layer_1/name = "mid"
+layer_1/tile_data = PackedInt32Array(-327689, 393216, 1, -262153, 393216, 1)
