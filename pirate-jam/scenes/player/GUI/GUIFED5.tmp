@@ -32,7 +32,7 @@ offset_bottom = 47.0
 layout_mode = 2
 text = "exit"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Container/Panel" groups=["Button_container"]]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container/Panel"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 86.0

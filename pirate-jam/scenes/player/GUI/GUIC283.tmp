@@ -32,7 +32,7 @@ offset_bottom = 47.0
 layout_mode = 2
 text = "exit"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Container/Panel" groups=["Button_container"]]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container/Panel"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 86.0
@@ -58,6 +58,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Inventory" parent="Container" instance=ExtResource("2_fj64m")]
+visible = false
 layout_mode = 1
 offset_left = 192.0
 offset_top = 52.0
@@ -66,10 +67,7 @@ offset_bottom = 52.0
 
 [node name="connect_dots" parent="Container" instance=ExtResource("3_pr3y8")]
 visible = false
-offset_left = 463.0
-offset_top = 124.0
-offset_right = 463.0
-offset_bottom = 124.0
+position = Vector2(463, 124)
 scale = Vector2(0.33, 0.33)
 
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Inventory" to="." method="_on_inventory_pressed"]
