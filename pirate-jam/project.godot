@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 [global_group]
 
 Button_container=""
+Connect_dots=""
 
 [gui]
 

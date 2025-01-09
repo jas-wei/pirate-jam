@@ -19,7 +19,7 @@ func _ready() -> void:
 	# Populate the vertices array with all Area2D children
 	vertices = get_tree().get_nodes_in_group("vertices")
 	button = get_tree().get_nodes_in_group("Button_container")[0].get_child(1)
-	print (button)
+	#print (button)
 
 
 func _input(event: InputEvent) -> void:
@@ -62,19 +62,19 @@ func _input(event: InputEvent) -> void:
 				current_line = null
 				start_vertex = null
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_line:
 		# Update the endpoint of the current line to the mouse position
 		current_line.set_point_position(1, get_global_mouse_position())
 
-func get_nearest_vertex(position: Vector2) -> Area2D:
+func get_nearest_vertex(position1: Vector2) -> Area2D:
 	
 	var nearest_vertex: Area2D = null
 	var min_distance = INF
 	for vertex in vertices:
 		#print(vertex.name, "Global Position:", vertex.global_position)
 		if vertex and vertex.global_position:  # Ensure the vertex exists
-			var distance = position.distance_to(vertex.global_position)
+			var distance = position1.distance_to(vertex.global_position)
 			#print("Distance to", vertex.name, ":", distance)
 			if distance < min_distance:
 				min_distance = distance
@@ -82,15 +82,15 @@ func get_nearest_vertex(position: Vector2) -> Area2D:
 	#print("Nearest vertex:", nearest_vertex.name if nearest_vertex else "None")
 	return nearest_vertex
 	
-func compare_edges(dots: Array, answer_key: Array) -> bool:
+func compare_edges(arr: Array, answer_key: Array) -> bool:
 	# Convert each edge in both dots and answer_key to a sorted Array (order doesn't matter)
 	for edge in dots:
 		edge.sort()
 		#print(edge)
-	dots.sort()
+	arr.sort()
 	#print(dots)
 
-	return dots == answer_key
+	return arr == answer_key
 
 
 #func _on_area_2d_mouse_entered() -> void:

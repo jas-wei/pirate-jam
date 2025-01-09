@@ -8,7 +8,7 @@ size = Vector2(108, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxa5y"]
 
-[node name="connect_dots" type="Control"]
+[node name="connect_dots" type="Control" groups=["Connect_dots"]]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 363.0
@@ -129,14 +129,3 @@ visible = false
 position = Vector2(416.327, 342.857)
 scale = Vector2(55.052, 55.052)
 shape = SubResource("RectangleShape2D_gxa5y")
-
-[node name="Container" type="Container" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GridContainer" type="GridContainer" parent="Container"]
-visible = false
-layout_mode = 2
-columns = 3
