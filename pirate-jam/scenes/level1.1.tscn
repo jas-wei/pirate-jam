@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=9 format=3 uid="uid://bmcv1y5y2bwtf"]
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="1_t20pi"]
-[ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/health_bar.tscn" id="2_3dd0l"]
+[ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="2_3dd0l"]
 [ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="3_v2xew"]
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_5mpf8"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/player/GUI/GUI.tscn" id="5_jq4rh"]
+[ext_resource type="PackedScene" uid="uid://d1lubnvm2pvgq" path="res://scenes/test_enemy.tscn" id="6_5x5q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
 texture = ExtResource("4_5mpf8")
@@ -193,3 +194,6 @@ zoom = Vector2(2.1, 2.1)
 script = ExtResource("3_v2xew")
 
 [node name="Gui" parent="." instance=ExtResource("5_jq4rh")]
+
+[node name="Node2D" parent="." instance=ExtResource("6_5x5q3")]
+position = Vector2(309, 100)
