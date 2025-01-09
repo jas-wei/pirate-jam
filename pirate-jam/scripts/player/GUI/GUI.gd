@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-
+@onready var connect_dots: Control = $Container/connect_dots
+@onready var referenced_scene = preload("res://scenes/connect_dots.tscn")  # PackedScene
 
 func _ready() -> void:
 	get_node("Container").hide()
@@ -9,6 +10,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 		get_node("Container").visible = get_tree().paused
+		var children = $Container/connect_dots/line_layer.get_children()
+		for child in children:
+			child.queue_free()
+		
+		#reload_referenced_scene()
 
 
 func _on_inventory_pressed() -> void:
