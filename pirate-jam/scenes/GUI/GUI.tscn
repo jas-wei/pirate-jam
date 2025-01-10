@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://57we0ndu6cs"]
 
 [ext_resource type="Script" path="res://scripts/player/GUI/GUI.gd" id="1_07d6n"]
-[ext_resource type="PackedScene" uid="uid://ynft66ay5enm" path="res://scenes/player/GUI/Inventory/Inventory.tscn" id="2_fj64m"]
-[ext_resource type="PackedScene" uid="uid://b83y4dp3nnqli" path="res://scenes/connect_dots.tscn" id="3_pr3y8"]
+[ext_resource type="PackedScene" uid="uid://ynft66ay5enm" path="res://scenes/GUI/Inventory/Inventory.tscn" id="2_fj64m"]
+[ext_resource type="PackedScene" uid="uid://b83y4dp3nnqli" path="res://scenes/GUI/connect_dots.tscn" id="3_pr3y8"]
 
 [node name="Gui" type="CanvasLayer"]
 process_mode = 3

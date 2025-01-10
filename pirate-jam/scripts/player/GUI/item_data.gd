@@ -9,3 +9,4 @@ enum Type {ARMOUR, WEAPON, ACCESSORY, MAIN, COIN}
 @export var item_defense : int
 @export_multiline var description : String
 @export var item_texture : Texture2D
+#@export var count: Label

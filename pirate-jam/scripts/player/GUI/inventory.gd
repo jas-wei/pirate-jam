@@ -1,5 +1,7 @@
 extends Control
 
+#@onready var coin = preload("res://scenes/coin.tscn")
+
 var items_to_load := [
 	"res://scenes/player/GUI/Inventory/Resources/shield.tres",
 	#"res://scenes/player/GUI/Inventory/Resources/sword.tres",
@@ -7,16 +9,30 @@ var items_to_load := [
 ]
 
 func _ready() -> void:
+	
+	InitSignals()
+	
 	# Create 24 inventory slots
 	for i in range(24):
 		var slot = InventorySlot.new()
 		slot._init(ItemData.Type.MAIN, Vector2(32, 32))
 		%Grid.add_child(slot)
+	
+	
 
-	# Load items and add them to slots
-	load_item(items_to_load)
+	#var coin_instance = coin.instantiate()
+	#add_child(coin_instance)
+#
+	## Load items and add them to slots
+	#coin_instance.pickup.connect(load_item)
+	#load_item(items_to_load)
 
-		
+func InitSignals():
+	Signals.connect("pickup", pickup)
+
+func pickup():
+	load_item(["res://scenes/GUI/Inventory/Resources/coin.tres"])
+
 func load_item(array):
 	for i in range(array.size()):
 		var item = InventoryItem.new()

@@ -1,0 +1,13 @@
+[gd_resource type="VisualShaderNodeScreenNormalWorldSpace" script_class="ItemData" load_steps=3 format=3 uid="uid://w4qqndtrwvkp"]
+
+[ext_resource type="Texture2D" uid="uid://dxjblqom4jobv" path="res://assets/circle-32.png" id="1_k5wrq"]
+[ext_resource type="Script" path="res://scripts/player/GUI/item_data.gd" id="2_ins6g"]
+
+[resource]
+script = ExtResource("2_ins6g")
+type = 4
+item_name = "coin"
+item_damage = 0
+item_defense = 0
+description = "coin."
+item_texture = ExtResource("1_k5wrq")

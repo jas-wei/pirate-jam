@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var connect_dots: Control = $Container/connect_dots
-@onready var referenced_scene = preload("res://scenes/connect_dots.tscn")  # PackedScene
+@onready var referenced_scene = preload("res://scenes/GUI/connect_dots.tscn")  # PackedScene
 var connect_dots_script
 
 func _ready() -> void:
@@ -46,3 +46,7 @@ func hideGUI():
 	$Container/Inventory.hide()
 	$Container/connect_dots.hide()
 	
+
+
+func _on_coin_pickup() -> void:
+	pass # Replace with function body.
