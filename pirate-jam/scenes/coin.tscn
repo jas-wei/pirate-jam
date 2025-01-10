@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://pe8m4g371m24"]
+
+[ext_resource type="Script" path="res://scenes/coin.gd" id="1_s160a"]
+[ext_resource type="Texture2D" uid="uid://cxnp5c3a220it" path="res://assets/spinning coin.png" id="1_uotsv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yka6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g2ym"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(0, 0, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1lky"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(21, 0, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0gdf"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(42, 0, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn5gh"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(63, 0, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfckq"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(84, 0, 19, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42hr3"]
+atlas = ExtResource("1_uotsv")
+region = Rect2(105, 0, 19, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uxfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g2ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1lky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0gdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn5gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfckq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42hr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Coin" type="Area2D"]
+visibility_layer = 2
+script = ExtResource("1_s160a")
+
+[node name="Area2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yka6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6uxfl")
+autoplay = "default"
+frame = 4
+frame_progress = 0.965022
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

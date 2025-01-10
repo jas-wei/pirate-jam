@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player/GUI/Inventory_slot.gd" id="1_13b4m"]
 [ext_resource type="Script" path="res://scripts/player/GUI/inventory.gd" id="1_wsvdt"]
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" groups=["inventory"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
