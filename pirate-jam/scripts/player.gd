@@ -31,10 +31,15 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 		animated_sprite_2d.play("run")
 		velocity.x = SPEED
+	#supposed to attack but dunno
+	#elif Input.is_action_pressed("attack"):
+	#	$AnimationPlayer.play("attack1")	
 	else:
 		animated_sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if !is_on_floor():
 		animated_sprite_2d.play("jump")
+		
+	
 
 	move_and_slide()
