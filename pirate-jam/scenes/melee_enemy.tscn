@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8dbagjrya0lm"]
+[gd_scene load_steps=13 format=3 uid="uid://c8dbagjrya0lm"]
 
 [ext_resource type="Texture2D" uid="uid://dhxbq3b3jfs10" path="res://assets/Minifantasy_Creatures_v3.2_Free_Version/Minifantasy_Creatures_Assets/Slimes/Blue _Slime/BlueSlimeIdle.png" id="1_rtp1b"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="2_ovidp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpugh"]
 atlas = ExtResource("1_rtp1b")
@@ -78,5 +79,12 @@ autoplay = "default"
 frame_progress = 0.925552
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_muwdd")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("2_ovidp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_muwdd")
