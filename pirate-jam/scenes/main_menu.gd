@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void: #this works but camera is wrong
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/level1.1.tscn")
 
 
 func _on_options_pressed() -> void: #haven't made this yet
