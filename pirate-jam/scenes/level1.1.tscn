@@ -191,9 +191,11 @@ scale = Vector2(0.706714, 0.706714)
 zoom = Vector2(2.1, 2.1)
 
 [node name="health_bar" parent="." instance=ExtResource("2_3dd0l")]
+visible = false
 script = ExtResource("3_v2xew")
 
 [node name="Gui" parent="." instance=ExtResource("5_jq4rh")]
+visible = false
 
 [node name="melee enemy" parent="." instance=ExtResource("6_y03u4")]
 position = Vector2(61, 88)
