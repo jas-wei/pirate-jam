@@ -1,31 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0h5etl4cunnp"]
+[gd_scene load_steps=2 format=3 uid="uid://c0h5etl4cunnp"]
 
-[ext_resource type="Texture2D" uid="uid://bd735mrkdrh7n" path="res://assets/Main Menu/continue.png" id="1_25v2y"]
-[ext_resource type="Texture2D" uid="uid://ch1j6li07vhf8" path="res://assets/Main Menu/new game.png" id="2_2yef4"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7b4ea"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi2lq"]
-size = Vector2(400, 152)
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7b4ea")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6foy3"]
-size = Vector2(408, 152)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -81.5
+offset_right = 65.0
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="main menu" type="Node"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="Continue" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-texture = ExtResource("1_25v2y")
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Continue"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_xi2lq")
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
 
-[node name="NewGame" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-texture = ExtResource("2_2yef4")
-offset = Vector2(0, 168)
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NewGame"]
-position = Vector2(0, 167)
-shape = SubResource("RectangleShape2D_6foy3")
-one_way_collision_margin = 128.0
-debug_color = Color(0, 0.596071, 0.722079, 0.42)
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

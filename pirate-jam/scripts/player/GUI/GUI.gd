@@ -21,7 +21,12 @@ func _on_achievements_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	hideGUI()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
+func _on_exit_pressed() -> void:
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = !get_tree().paused
+		get_node("Container").visible = get_tree().paused
 
 func hideGUI():
 	$Container/Panel/VBoxContainer2/Achievements.disabled = false
