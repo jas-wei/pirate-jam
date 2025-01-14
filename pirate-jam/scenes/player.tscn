@@ -233,7 +233,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/HitBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D/HitBox/attackbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -261,7 +261,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/HitBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D/HitBox/attackbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -289,11 +289,11 @@ animation = &"attack"
 [node name="HitBox" type="Area2D" parent="AnimatedSprite2D"]
 script = ExtResource("3_jf0pu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
+[node name="attackbox" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
 position = Vector2(17.6678, -2.82685)
 shape = SubResource("RectangleShape2D_drbgv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="characterbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.12014)
 scale = Vector2(0.73, 0.73)
 shape = SubResource("CapsuleShape2D_0is6d")
