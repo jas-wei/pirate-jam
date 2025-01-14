@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://57we0ndu6cs"]
+[gd_scene load_steps=4 format=3 uid="uid://57we0ndu6cs"]
 
 [ext_resource type="Script" path="res://scripts/player/GUI/GUI.gd" id="1_07d6n"]
 [ext_resource type="PackedScene" uid="uid://ynft66ay5enm" path="res://scenes/player/GUI/Inventory/Inventory.tscn" id="2_fj64m"]
+[ext_resource type="PackedScene" uid="uid://b83y4dp3nnqli" path="res://scenes/connect_dots.tscn" id="3_pr3y8"]
 
 [node name="Gui" type="CanvasLayer"]
 process_mode = 3
@@ -43,9 +44,9 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "Inventory"
 
-[node name="Achievements" type="Button" parent="Container/Panel/VBoxContainer2"]
+[node name="Spells" type="Button" parent="Container/Panel/VBoxContainer2"]
 layout_mode = 2
-text = "Achievements"
+text = "Spells"
 
 [node name="Main_Menu" type="Button" parent="Container/Panel/VBoxContainer2"]
 layout_mode = 2
@@ -63,6 +64,15 @@ offset_top = 52.0
 offset_right = 192.0
 offset_bottom = 52.0
 
+[node name="connect_dots" parent="Container" instance=ExtResource("3_pr3y8")]
+visible = false
+offset_left = 463.0
+offset_top = 124.0
+offset_right = 463.0
+offset_bottom = 124.0
+scale = Vector2(0.33, 0.33)
+
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Inventory" to="." method="_on_inventory_pressed"]
-[connection signal="pressed" from="Container/Panel/VBoxContainer2/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="Container/Panel/VBoxContainer2/Spells" to="." method="_on_spells_pressed"]
+[connection signal="pressed" from="Container/Panel/VBoxContainer2/Spells" to="." method="_on_achievements_pressed"]
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Main_Menu" to="." method="_on_main_menu_pressed"]

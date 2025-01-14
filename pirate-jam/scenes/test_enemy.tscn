@@ -1,8 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1lubnvm2pvgq"]
+[gd_scene load_steps=9 format=3 uid="uid://do2u5kddcahdm"]
 
-[ext_resource type="Script" path="res://scenes/test_enemy.gd" id="1_4pf5h"]
 [ext_resource type="Texture2D" uid="uid://hlss8fhrwxxr" path="res://assets/Adventurer/slime_purple.png" id="1_kdy7p"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="2_2mkyb"]
+
+[sub_resource type="GDScript" id="GDScript_naxs7"]
+script/source = "extends Node2D
+
+func take_damage(amount: int) -> void:
+	print(\"Damage\")
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrwgq"]
 atlas = ExtResource("1_kdy7p")
@@ -34,7 +40,7 @@ radius = 8.0
 height = 16.0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_4pf5h")
+script = SubResource("GDScript_naxs7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dwqdj")

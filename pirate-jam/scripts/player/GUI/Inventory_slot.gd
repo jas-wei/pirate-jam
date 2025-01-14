@@ -7,7 +7,7 @@ func _init(t: ItemData.Type = ItemData.Type.MAIN, cms: Vector2 = Vector2.ZERO):
 	type = t
 	custom_minimum_size = cms
 	
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if data is InventoryItem:
 		if type == ItemData.Type.MAIN:
 			if get_child_count() == 0:
@@ -20,7 +20,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 			return data.data.type == type
 	return false
 	
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# Unequipping items:
 	if get_child_count() > 0:
 		var item := get_child(0)

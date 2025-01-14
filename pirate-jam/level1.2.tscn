@@ -1,15 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=9 format=3 uid="uid://b7hjibnu1ul7n"]
 
-[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="1_t20pi"]
-[ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="2_3dd0l"]
-[ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="3_v2xew"]
-[ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_5mpf8"]
-[ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
-[ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/melee_enemy.tscn" id="7_jgrue"]
-[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
+[ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="1_p8ed0"]
+[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="2_slwgq"]
+[ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="3_wpwkl"]
+[ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="4_x780x"]
+[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="5_x4r0f"]
+[ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_cot3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
-texture = ExtResource("4_5mpf8")
+texture = ExtResource("1_p8ed0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -172,7 +171,7 @@ texture = ExtResource("4_5mpf8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7urid")
 
-[node name="level2" type="Node2D"]
+[node name="level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-2, 0)
@@ -183,7 +182,7 @@ layer_0/tile_data = PackedInt32Array(-327691, 196608, 13, -262155, 196608, 13, -
 layer_1/name = "mid"
 layer_1/tile_data = PackedInt32Array(-327689, 393216, 1, -262153, 393216, 1, -196617, 393216, 1, -131081, 393216, 1, -65545, 393216, 1, -9, 393216, 1, 65527, 393216, 1, 131063, 393216, 1, 196599, 393216, 1, -327684, 393216, 1, -262148, 393216, 1, -196612, 393216, 1, -196611, 393216, 1, -196610, 393216, 1, -196609, 393216, 1, -262144, 393216, 1, -262143, 393216, 1, -196606, 393216, 1, -196605, 393216, 1, -196604, 393216, 1, -131068, 393216, 1, -131067, 393216, 1, -131066, 393216, 1, -131065, 393216, 1, -131064, 393216, 1, -131063, 393216, 1, -131062, 393216, 1, 262139, 393216, 1, 262140, 393216, 1, 262141, 393216, 1, 262142, 393216, 1, 327678, 393216, 1, 393214, 393216, 1, 393215, 393216, 1, 458751, 393216, 1, 393216, 393216, 1, 393217, 393216, 1, 393218, 393216, 1, 393219, 393216, 1, 393220, 393216, 1, 393221, 393216, 1, 458757, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 262137, 393216, 1, 262138, 393216, 1, 196600, 393216, 1, 262136, 393216, 1, 458769, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 458772, 393216, 1, 458773, 393216, 1, 458774, 393216, 1, 393238, 393216, 1, 327702, 393216, 1, 327703, 393216, 1, 327704, 393216, 1, 262168, 393216, 1, 262169, 393216, 1, 196633, 393216, 1, 196634, 393216, 1, 131099, 393216, 1, 131100, 393216, 1, -131061, 393216, 1, -131060, 393216, 1, -196596, 393216, 1, -196595, 393216, 1, -196594, 393216, 1, -262130, 393216, 1, -262129, 393216, 1, -327665, 393216, 1, -327664, 393216, 1, -393199, 393216, 1, -393198, 393216, 1, -393197, 393216, 1, -393196, 393216, 1, -393195, 393216, 1, -327659, 393216, 1, -327658, 393216, 1, -327657, 393216, 1, -262121, 393216, 1, -262120, 393216, 1, -262119, 393216, 1, -262118, 393216, 1, -196582, 393216, 1, -196581, 393216, 1, -196580, 393216, 1, -196579, 393216, 1, -131043, 393216, 1, -131042, 393216, 1, -131041, 393216, 1, -131040, 393216, 1, -196576, 393216, 1, -196575, 393216, 1, -196574, 393216, 1, 131101, 393216, 1, 196637, 393216, 1, 196638, 393216, 1, 196639, 393216, 1, 196640, 393216, 1, 196641, 393216, 1, 196642, 393216, 1, 196603, 458752, 5, 393225, 458752, 5, 262166, 524288, 6, 327680, 524288, 6, 196602, 524288, 5, 131103, 458752, 7, 65565, 458752, 7, 196605, 524288, 3, 458763, 589824, 2, 458768, 720896, 2, 458764, 655360, 2, 458765, 655360, 2, 458766, 655360, 2, 458767, 655360, 2)
 
-[node name="player" parent="." instance=ExtResource("1_t20pi")]
+[node name="player" parent="." instance=ExtResource("2_slwgq")]
 position = Vector2(-2, -33)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -191,19 +190,19 @@ position = Vector2(1.41343, 23.3216)
 scale = Vector2(0.706714, 0.706714)
 zoom = Vector2(2.1, 2.1)
 
-[node name="health_bar" parent="." instance=ExtResource("2_3dd0l")]
-script = ExtResource("3_v2xew")
+[node name="health_bar" parent="." instance=ExtResource("3_wpwkl")]
+script = ExtResource("4_x780x")
 
-[node name="Coin" parent="." instance=ExtResource("6_j7tpd")]
+[node name="Coin" parent="." instance=ExtResource("6_cot3e")]
 position = Vector2(30, 74)
+script = null
 
-[node name="Coin2" parent="." instance=ExtResource("6_j7tpd")]
+[node name="Coin2" parent="." instance=ExtResource("6_cot3e")]
 position = Vector2(58, 74)
+script = null
 
-[node name="Coin3" parent="." instance=ExtResource("6_j7tpd")]
+[node name="Coin3" parent="." instance=ExtResource("6_cot3e")]
 position = Vector2(101, 75)
+script = null
 
-[node name="melee enemy" parent="." instance=ExtResource("7_jgrue")]
-position = Vector2(61, 88)
-
-[node name="Gui" parent="." instance=ExtResource("8_45tsc")]
+[node name="Gui" parent="." instance=ExtResource("5_x4r0f")]
