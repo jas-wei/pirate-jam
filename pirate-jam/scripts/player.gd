@@ -8,11 +8,23 @@ const JUMP_VELOCITY = -400.0
 @export var maxHealth = 30
 @onready var currentHealth = 0
 
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
 	healthChanged.emit()
+	connect("area_entered", self._on_area_entered)
 
+func _on_area_entered(hitbox: HitBox) -> void:
+	if hitbox == null:
+		return
+
+	if owner.has_method("take_damage"):
+		owner.take_damage(hitbox.damage)
+#why is this not working?	
+func take_damage(amount: int)->void:
+	print("player damaged")
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -40,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		animated_sprite_2d.play("jump")
 		
-	
+	#implement take damage from enemy
 
 	move_and_slide()
+	
