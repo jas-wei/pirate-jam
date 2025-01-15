@@ -12,6 +12,12 @@ var direction = 1
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready() -> void:
+	pass
+	
+func take_damage(amount:int)->void:
+	print("enemy damaged")
+	
 func _process(delta: float) -> void:
 	if ray_castright.is_colliding():
 		direction=-1
@@ -31,9 +37,5 @@ func _process(delta: float) -> void:
 		
 	position.x+= direction * SPEED * delta
 	
-#take damage is working
-#task 2- get specific player damage
-func take_damage(amount: int) -> void:
-	print("enemy damaged")
+
 	
-#need to implement enemy damaging player

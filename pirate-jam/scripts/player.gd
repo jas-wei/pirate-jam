@@ -13,15 +13,7 @@ const JUMP_VELOCITY = -400.0
 
 func _ready():
 	healthChanged.emit()
-	connect("area_entered", self._on_area_entered)
-
-func _on_area_entered(hitbox: HitBox) -> void:
-	if hitbox == null:
-		return
-
-	if owner.has_method("take_damage"):
-		owner.take_damage(hitbox.damage)
-#why is this not working?	
+		
 func take_damage(amount: int)->void:
 	print("player damaged")
 	
