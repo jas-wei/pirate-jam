@@ -1,20 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2ruo5rx0buok"]
+[gd_scene load_steps=11 format=3 uid="uid://d2ruo5rx0buok"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qhs6d"]
 [ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
-[ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_jf0pu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drbgv"]
-size = Vector2(12.1201, 35.3357)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0is6d"]
-radius = 12.5853
+radius = 10.6491
 height = 38.724
 
 [sub_resource type="Animation" id="Animation_cwrsm"]
 resource_name = "Attack"
 length = 0.70001
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,22 +26,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/HitBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath(".:attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:attacking")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -56,7 +39,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_kr8lb"]
 resource_name = "Fall"
 length = 0.40002
-step = 0.2
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +56,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_uel1v"]
 resource_name = "Idle"
 length = 0.40001
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -91,7 +73,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_ut6dr"]
 resource_name = "Jump"
 length = 0.40001
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -111,34 +92,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/HitBox/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/path = NodePath(".:attacking")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:attacking")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -147,7 +116,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_sh7ip"]
 resource_name = "Run"
-length = 0.60001
+length = 0.70001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -181,13 +150,6 @@ texture = ExtResource("2_cf8ah")
 hframes = 7
 vframes = 11
 
-[node name="HitBox" type="Area2D" parent="Sprite2D"]
-script = ExtResource("3_jf0pu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitBox"]
-position = Vector2(17.6678, -0.706708)
-shape = SubResource("RectangleShape2D_drbgv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.42109e-14, 3.53357)
 scale = Vector2(0.73, 0.73)
@@ -197,3 +159,5 @@ shape = SubResource("CapsuleShape2D_0is6d")
 libraries = {
 "": SubResource("AnimationLibrary_1jn7b")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

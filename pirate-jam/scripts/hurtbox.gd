@@ -5,9 +5,6 @@ signal recieved_damage(damage: int)
 
 #@export var health: Health
 
-
-
-
 func _init() -> void:
 	collision_layer = 0
 	collision_mask = 2
