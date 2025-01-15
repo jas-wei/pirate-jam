@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2ruo5rx0buok"]
+[gd_scene load_steps=37 format=3 uid="uid://d2ruo5rx0buok"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qhs6d"]
 [ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_jf0pu"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="4_3v45a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gni1c"]
 atlas = ExtResource("2_cf8ah")
@@ -233,7 +234,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/HitBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D/playerHitBox/attackbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -261,7 +262,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/HitBox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D/playerHitBox/attackbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -286,14 +287,22 @@ light_mask = 2
 sprite_frames = SubResource("SpriteFrames_k8v11")
 animation = &"attack"
 
-[node name="HitBox" type="Area2D" parent="AnimatedSprite2D"]
+[node name="playerHitBox" type="Area2D" parent="AnimatedSprite2D"]
 script = ExtResource("3_jf0pu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/HitBox"]
+[node name="attackbox" type="CollisionShape2D" parent="AnimatedSprite2D/playerHitBox"]
 position = Vector2(17.6678, -2.82685)
 shape = SubResource("RectangleShape2D_drbgv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="playerHurtbox" type="Area2D" parent="."]
+script = ExtResource("4_3v45a")
+
+[node name="characterbox" type="CollisionShape2D" parent="playerHurtbox"]
+position = Vector2(0, 2.12014)
+scale = Vector2(0.73, 0.73)
+shape = SubResource("CapsuleShape2D_0is6d")
+
+[node name="characterbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.12014)
 scale = Vector2(0.73, 0.73)
 shape = SubResource("CapsuleShape2D_0is6d")

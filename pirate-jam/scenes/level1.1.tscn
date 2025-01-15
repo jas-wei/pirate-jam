@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="3_v2xew"]
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_5mpf8"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/player/GUI/GUI.tscn" id="5_jq4rh"]
-[ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/melee_enemy.tscn" id="6_y03u4"]
+[ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="6_y03u4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
 texture = ExtResource("4_5mpf8")
@@ -196,4 +196,4 @@ script = ExtResource("3_v2xew")
 [node name="Gui" parent="." instance=ExtResource("5_jq4rh")]
 
 [node name="melee enemy" parent="." instance=ExtResource("6_y03u4")]
-position = Vector2(61, 88)
+position = Vector2(41, 87)
