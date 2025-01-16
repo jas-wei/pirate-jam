@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
 [ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/melee_enemy.tscn" id="7_jgrue"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
+[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/player/GUI/GUI.tscn" id="5_jq4rh"]
+[ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="6_y03u4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
 texture = ExtResource("4_5mpf8")
@@ -207,3 +209,5 @@ position = Vector2(101, 75)
 position = Vector2(61, 88)
 
 [node name="Gui" parent="." instance=ExtResource("8_45tsc")]
+[node name="melee enemy" parent="." instance=ExtResource("6_y03u4")]
+position = Vector2(41, 87)
