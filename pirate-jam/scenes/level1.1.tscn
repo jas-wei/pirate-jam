@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=12 format=3 uid="uid://bmcv1y5y2bwtf"]
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="1_t20pi"]
 [ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="2_3dd0l"]
 [ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="3_v2xew"]
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_5mpf8"]
 [ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
-[ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/melee_enemy.tscn" id="7_jgrue"]
-[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
-[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/player/GUI/GUI.tscn" id="5_jq4rh"]
 [ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="6_y03u4"]
+[ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
+[ext_resource type="PackedScene" uid="uid://c7xgnhcy66sd8" path="res://killzone.tscn" id="8_b5maa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
 texture = ExtResource("4_5mpf8")
@@ -174,6 +173,8 @@ texture = ExtResource("4_5mpf8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7urid")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ml8qa"]
+
 [node name="level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -190,8 +191,10 @@ position = Vector2(-2, -33)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(1.41343, 23.3216)
-scale = Vector2(0.706714, 0.706714)
+scale = Vector2(-12.7367, 152.016)
 zoom = Vector2(2.1, 2.1)
+limit_bottom = 368
+limit_smoothed = true
 
 [node name="health_bar" parent="." instance=ExtResource("2_3dd0l")]
 script = ExtResource("3_v2xew")
@@ -205,9 +208,16 @@ position = Vector2(58, 74)
 [node name="Coin3" parent="." instance=ExtResource("6_j7tpd")]
 position = Vector2(101, 75)
 
-[node name="melee enemy" parent="." instance=ExtResource("7_jgrue")]
+[node name="melee enemy" parent="." instance=ExtResource("6_y03u4")]
 position = Vector2(61, 88)
 
 [node name="Gui" parent="." instance=ExtResource("8_45tsc")]
-[node name="melee enemy" parent="." instance=ExtResource("6_y03u4")]
+
+[node name="melee enemy2" parent="." instance=ExtResource("6_y03u4")]
 position = Vector2(41, 87)
+
+[node name="killzone" parent="." instance=ExtResource("8_b5maa")]
+position = Vector2(0, 368)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_ml8qa")
