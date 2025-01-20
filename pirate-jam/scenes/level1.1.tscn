@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
 [ext_resource type="PackedScene" uid="uid://c7xgnhcy66sd8" path="res://killzone.tscn" id="8_b5maa"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50cfi"]
 texture = ExtResource("4_5mpf8")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -171,7 +171,7 @@ texture = ExtResource("4_5mpf8")
 
 [sub_resource type="TileSet" id="TileSet_tsalx"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7urid")
+sources/0 = SubResource("TileSetAtlasSource_50cfi")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ml8qa"]
 

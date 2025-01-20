@@ -37,7 +37,7 @@ func _on_spells_pressed() -> void:
 		child.show()
 
 func _on_main_menu_pressed() -> void:
-	hideGUI()
+	#hideGUI()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func hideGUI():

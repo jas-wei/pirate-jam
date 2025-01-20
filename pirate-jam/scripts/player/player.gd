@@ -12,6 +12,7 @@ const JUMP_VELOCITY = -400.0
 
 func _ready():
 	healthChanged.emit()
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,3 +39,5 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("jump")
 
 	move_and_slide()
+	
+	
