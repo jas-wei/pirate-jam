@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="res://scenes/level1.tscn"
 
+[autoload]
+
+SignalBus="*res://signal_bus.gd"
+
 [gui]
 
 theme/custom="res://default.tres"

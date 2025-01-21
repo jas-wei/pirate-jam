@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal healthChanged
 
@@ -7,6 +8,8 @@ signal healthChanged
 # Gets default gravity value from project settings
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: Vector2 = Vector2.ZERO
+
+signal facingDirectionChanged(facing_right: bool)
 
 @export var maxHealth = 30
 @export var attacking = false
@@ -54,3 +57,5 @@ func update_facing_direction():
 		sprite.flip_h = false
 	elif direction.x < 0:
 		sprite.flip_h = true
+		
+	emit_signal("facingDirectionChanged", !sprite.flip_h)
