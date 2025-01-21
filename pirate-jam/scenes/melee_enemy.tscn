@@ -1,12 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8dbagjrya0lm"]
+[gd_scene load_steps=12 format=3 uid="uid://chhlslm1ljq8u"]
 
-[ext_resource type="Script" path="res://scripts/melee_enemy.gd" id="1_a8ern"]
 [ext_resource type="Texture2D" uid="uid://dhxbq3b3jfs10" path="res://assets/Minifantasy_Creatures_v3.2_Free_Version/Minifantasy_Creatures_Assets/Slimes/Blue _Slime/BlueSlimeIdle.png" id="1_rtp1b"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_2ux81"]
-[ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_c2wgh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_muwdd"]
-size = Vector2(18.375, 10.625)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpugh"]
 atlas = ExtResource("1_rtp1b")
@@ -72,23 +66,10 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muwdd"]
+size = Vector2(18.375, 10.625)
+
 [node name="melee enemy" type="Node2D"]
-script = ExtResource("1_a8ern")
-
-[node name="mehurtbox" type="Area2D" parent="."]
-script = ExtResource("3_2ux81")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mehurtbox"]
-visibility_layer = 3
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_muwdd")
-
-[node name="mehitbox" type="Area2D" parent="."]
-script = ExtResource("3_c2wgh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mehitbox"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_muwdd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -96,18 +77,6 @@ sprite_frames = SubResource("SpriteFrames_hiymm")
 autoplay = "default"
 frame_progress = 0.925552
 
-[node name="RayCastright" type="RayCast2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
-target_position = Vector2(17, 0)
-
-[node name="RayCastleft" type="RayCast2D" parent="."]
-position = Vector2(0, 3)
-target_position = Vector2(-17, 0)
-
-[node name="RayCastdown" type="RayCast2D" parent="."]
-position = Vector2(0, 3)
-target_position = Vector2(12, 11)
-
-[node name="RayCastdown2" type="RayCast2D" parent="."]
-position = Vector2(0, 3)
-target_position = Vector2(-12, 10)
+shape = SubResource("RectangleShape2D_muwdd")

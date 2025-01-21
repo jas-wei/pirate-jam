@@ -11,6 +11,7 @@ func _ready() -> void:
 #change so that its only on area entered for when attack is implemented
 #if enemy enter attack range it is damaged
 func _on_area_entered(hitbox) -> void:
+	print("asdasd")
 	if hitbox == null:
 		return	
 	if owner.has_method("take_damage"):

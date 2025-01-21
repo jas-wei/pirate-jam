@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6v3dh86ymk1k"]
+
+[ext_resource type="Texture2D" uid="uid://hlss8fhrwxxr" path="res://assets/Adventurer/slime_purple.png" id="1_kdy7p"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="2_2mkyb"]
+
+[sub_resource type="GDScript" id="GDScript_naxs7"]
+script/source = "extends Node2D
+
+func take_damage(amount: int) -> void:
+	print(\"Damage\")
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrwgq"]
+atlas = ExtResource("1_kdy7p")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_surml"]
+atlas = ExtResource("1_kdy7p")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwqdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrwgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_surml")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q80tr"]
+size = Vector2(16, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l16nd"]
+radius = 8.0
+height = 16.0
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_naxs7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dwqdj")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.439081
+
+[node name="MyHurtBox" type="Area2D" parent="."]
+script = ExtResource("2_2mkyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_q80tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_l16nd")
