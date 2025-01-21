@@ -18,7 +18,7 @@ func you_suck() -> void:
 		timer.start()
 
 func _on_timer_timeout() -> void:
-	print("Now you get to meet death!")
+	print("Now you get to meet death, you piece of sh*t loser!")
 	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 #func _on_timer_2_timeout() -> void:
