@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b7hjibnu1ul7n"]
 
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="1_p8ed0"]
-[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="2_slwgq"]
+[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="2_slwgq"]
 [ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="3_wpwkl"]
 [ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="4_x780x"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="5_x4r0f"]

@@ -19,7 +19,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Signals="*res://scripts/singletons/signals.gd"
-SignalBus="*res://signal_bus.gd"
+SignalBus="*res://scripts/signal_bus.gd"
 
 [gui]
 
