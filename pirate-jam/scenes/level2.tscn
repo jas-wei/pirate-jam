@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://smaxs8yiqnij"]
+[gd_scene load_steps=6 format=3 uid="uid://smaxs8yiqnij"]
 
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="1_hxkbu"]
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="2_i1ds4"]
-[ext_resource type="PackedScene" uid="uid://behyohllsu0cs" path="res://scenes/enemy.tscn" id="3_2755b"]
 [ext_resource type="PackedScene" uid="uid://btsos56tdnl3w" path="res://scenes/health_change_manager.tscn" id="4_jjd2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350t0"]
@@ -190,13 +189,11 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-122, -60)
+scale = Vector2(1, 1)
 zoom = Vector2(2.3, 2.3)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="Enemy" parent="." instance=ExtResource("3_2755b")]
-position = Vector2(-334, 68)
 
 [node name="HealthChangeManager" parent="." instance=ExtResource("4_jjd2u")]
