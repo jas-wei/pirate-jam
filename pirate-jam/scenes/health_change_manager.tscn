@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btsos56tdnl3w"]
 
 [ext_resource type="Script" path="res://scenes/health_change_manager.gd" id="1_042te"]
-[ext_resource type="PackedScene" uid="uid://b7vdkxabg267p" path="res://scenes/UI/health_changed_label.tscn" id="2_48yk8"]
+[ext_resource type="PackedScene" uid="uid://b7vdkxabg267p" path="res://scripts/UI/health_changed_label.tscn" id="2_48yk8"]
 
 [node name="HealthChangeManager" type="Control"]
 layout_mode = 3
