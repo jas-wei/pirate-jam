@@ -3,47 +3,47 @@
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_h7nam"]
 [ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_houku"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6txt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jbrm"]
 atlas = ExtResource("2_houku")
 region = Rect2(0, 0, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g7q0w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyouu"]
 atlas = ExtResource("2_houku")
 region = Rect2(50, 0, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l812g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sawtd"]
 atlas = ExtResource("2_houku")
 region = Rect2(100, 0, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mca3m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjhel"]
 atlas = ExtResource("2_houku")
 region = Rect2(150, 0, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gc1io"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yjuh"]
 atlas = ExtResource("2_houku")
 region = Rect2(150, 74, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ucmbq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_22n11"]
 atlas = ExtResource("2_houku")
 region = Rect2(50, 37, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v10u0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg75g"]
 atlas = ExtResource("2_houku")
 region = Rect2(100, 37, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7la6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_isb11"]
 atlas = ExtResource("2_houku")
 region = Rect2(150, 37, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wiw1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8unbk"]
 atlas = ExtResource("2_houku")
 region = Rect2(200, 37, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dmy1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmlm3"]
 atlas = ExtResource("2_houku")
 region = Rect2(250, 37, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2noo5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4fu8"]
 atlas = ExtResource("2_houku")
 region = Rect2(300, 37, 50, 37)
 
@@ -51,16 +51,16 @@ region = Rect2(300, 37, 50, 37)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b6txt")
+"texture": SubResource("AtlasTexture_1jbrm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g7q0w")
+"texture": SubResource("AtlasTexture_iyouu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l812g")
+"texture": SubResource("AtlasTexture_sawtd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mca3m")
+"texture": SubResource("AtlasTexture_hjhel")
 }],
 "loop": true,
 "name": &"idle",
@@ -68,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gc1io")
+"texture": SubResource("AtlasTexture_0yjuh")
 }],
 "loop": true,
 "name": &"jump",
@@ -76,22 +76,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ucmbq")
+"texture": SubResource("AtlasTexture_22n11")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v10u0")
+"texture": SubResource("AtlasTexture_bg75g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m7la6")
+"texture": SubResource("AtlasTexture_isb11")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2wiw1")
+"texture": SubResource("AtlasTexture_8unbk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6dmy1")
+"texture": SubResource("AtlasTexture_dmlm3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2noo5")
+"texture": SubResource("AtlasTexture_o4fu8")
 }],
 "loop": true,
 "name": &"run",
@@ -109,7 +109,8 @@ script = ExtResource("1_h7nam")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
 sprite_frames = SubResource("SpriteFrames_k8v11")
-animation = &"run"
+animation = &"jump"
+frame_progress = 0.00161637
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.41343)
