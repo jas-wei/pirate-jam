@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d2ruo5rx0buok"]
+[gd_scene load_steps=46 format=3 uid="uid://d2ruo5rx0buok"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_qhs6d"]
 [ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="2_cf8ah"]
@@ -184,24 +184,6 @@ tracks/0/keys = {
 "values": [14, 15, 16, 17, 22, 23]
 }
 
-[sub_resource type="Animation" id="Animation_6k4s8"]
-resource_name = "Jump_Loop"
-length = 0.20001
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-1.49012e-08, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [22, 23]
-}
-
 [sub_resource type="Animation" id="Animation_pt551"]
 length = 0.001
 tracks/0/type = "value"
@@ -268,7 +250,6 @@ _data = {
 "Fall": SubResource("Animation_kr8lb"),
 "Idle": SubResource("Animation_uel1v"),
 "Jump": SubResource("Animation_ut6dr"),
-"Jump_Loop": SubResource("Animation_6k4s8"),
 "RESET": SubResource("Animation_pt551"),
 "Run": SubResource("Animation_sh7ip")
 }
@@ -288,7 +269,7 @@ animation = &"Double_Jump"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tkac6"]
 animation = &"Fall"
 use_custom_timeline = true
-timeline_length = 1.0
+timeline_length = 0.01
 stretch_time_scale = true
 start_offset = 0.0
 loop_mode = 0
@@ -358,7 +339,7 @@ states/Move/node = SubResource("AnimationNodeBlendSpace1D_l0mvd")
 states/Move/position = Vector2(462, 176)
 states/Start/position = Vector2(203, 176)
 transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_xx5q7"), "Move", "Jump", SubResource("AnimationNodeStateMachineTransition_b28fm"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_vdvqp"), "Fall", "Move", SubResource("AnimationNodeStateMachineTransition_8kehk"), "Jump", "Double_Jump", SubResource("AnimationNodeStateMachineTransition_65175"), "Double_Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_i73pa"), "Move", "Attack1", SubResource("AnimationNodeStateMachineTransition_wendk"), "Attack1", "Attack2", SubResource("AnimationNodeStateMachineTransition_v40gw"), "Attack1", "Move", SubResource("AnimationNodeStateMachineTransition_2eija"), "Attack2", "Move", SubResource("AnimationNodeStateMachineTransition_3aein"), "Attack2", "Attack3", SubResource("AnimationNodeStateMachineTransition_xdlgi"), "Attack3", "Move", SubResource("AnimationNodeStateMachineTransition_lgnw7")]
-graph_offset = Vector2(0, 125.639)
+graph_offset = Vector2(0, 19.3117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wgny"]
 size = Vector2(13.4006, 35.3357)
