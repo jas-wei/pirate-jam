@@ -1,6 +1,6 @@
 [gd_resource type="VisualShaderNodeScreenNormalWorldSpace" script_class="ItemData" load_steps=3 format=3 uid="uid://w4qqndtrwvkp"]
 
-[ext_resource type="Texture2D" uid="uid://dxjblqom4jobv" path="res://assets/circle-32.png" id="1_yfcr6"]
+[ext_resource type="Texture2D" uid="uid://dxjblqom4jobv" path="res://assets/Items/circle-32.png" id="1_yfcr6"]
 [ext_resource type="Script" path="res://scripts/player/GUI/item_data.gd" id="2_ins6g"]
 
 [resource]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="1_t20pi"]
 [ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="2_3dd0l"]
-[ext_resource type="Script" path="res://scripts/player/health_bar.gd" id="3_v2xew"]
+[ext_resource type="Script" path="res://scripts/UI/health_bar.gd" id="3_v2xew"]
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="4_5mpf8"]
 [ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
 [ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="7_nxqlk"]

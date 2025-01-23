@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2ruo5rx0buok"]
+[gd_scene load_steps=15 format=3 uid="uid://ojyow54o2ytw"]
 
-[ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/Adventurer/adventurer-Sheet.png" id="1_vsldi"]
+[ext_resource type="Texture2D" uid="uid://dbtxvocyel2hx" path="res://assets/HOMO/adventurer-Sheet.png" id="1_vsldi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jbrm"]
 atlas = ExtResource("1_vsldi")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b83y4dp3nnqli"]
 
-[ext_resource type="Script" path="res://scripts/connect_dots.gd" id="1_sp31m"]
+[ext_resource type="Script" path="res://scripts/UI/connect_dots.gd" id="1_sp31m"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5pci"]
 load_path = "res://.godot/imported/circle-32.png-7b37e7b565ceaa8081c935088939ff58.ctex"

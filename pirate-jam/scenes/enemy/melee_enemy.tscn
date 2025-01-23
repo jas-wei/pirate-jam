@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c8dbagjrya0lm"]
 
-[ext_resource type="Script" path="res://scripts/melee_enemy.gd" id="1_a8ern"]
-[ext_resource type="Texture2D" uid="uid://dhxbq3b3jfs10" path="res://assets/Minifantasy_Creatures_v3.2_Free_Version/Minifantasy_Creatures_Assets/Slimes/Blue _Slime/BlueSlimeIdle.png" id="1_rtp1b"]
+[ext_resource type="Script" path="res://scripts/enemy/melee_enemy.gd" id="1_a8ern"]
+[ext_resource type="Texture2D" uid="uid://dhxbq3b3jfs10" path="res://assets/Enemies/Minifantasy_Creatures_v3.2_Free_Version/Minifantasy_Creatures_Assets/Slimes/Blue _Slime/BlueSlimeIdle.png" id="1_rtp1b"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_2ux81"]
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_c2wgh"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://pe8m4g371m24"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_u8bg4"]
-[ext_resource type="Texture2D" uid="uid://cxnp5c3a220it" path="res://assets/spinning coin.png" id="2_gfrwy"]
+[ext_resource type="Script" path="res://scripts/player/GUI/coin.gd" id="1_u8bg4"]
+[ext_resource type="Texture2D" uid="uid://cxnp5c3a220it" path="res://assets/Items/spinning coin.png" id="2_gfrwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yka6w"]
 
