@@ -347,6 +347,7 @@ size = Vector2(13.4006, 35.3357)
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(1.415, 1.415)
 script = ExtResource("1_qhs6d")
+attacking = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cf8ah")
