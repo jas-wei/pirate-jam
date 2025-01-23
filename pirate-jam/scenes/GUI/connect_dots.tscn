@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://b83y4dp3nnqli"]
+
+[ext_resource type="Script" path="res://scripts/connect_dots.gd" id="1_sp31m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5pci"]
+load_path = "res://.godot/imported/circle-32.png-7b37e7b565ceaa8081c935088939ff58.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j262"]
+size = Vector2(108, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxa5y"]
+
+[node name="connect_dots" type="Control" groups=["Connect_dots"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 363.0
+offset_top = 134.0
+offset_right = 363.0
+offset_bottom = 134.0
+scale = Vector2(0.49, 0.49)
+script = ExtResource("1_sp31m")
+
+[node name="line_layer" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="line_layer"]
+position = Vector2(610.37, 96)
+points = PackedVector2Array(0, 0, 0, 0)
+
+[node name="dot1" type="Area2D" parent="." groups=["vertices"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="dot1"]
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot1"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot2" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(402.041, -0.0408325)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot2"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot2"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot3" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(844.898, -2.04086)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot3"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot3"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot4" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(-2.04077, 357.143)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot4"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot4"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot5" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(412.245, 357.143)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot5"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot5"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot6" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(834.694, 357.143)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot6"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot6"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot7" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(-4.08154, 714.286)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot7"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot7"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot8" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(412.245, 716.326)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot8"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot8"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot9" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(828.571, 724.49)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot9"]
+position = Vector2(2, 1)
+texture = SubResource("CompressedTexture2D_u5pci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot9"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(416.327, 342.857)
+scale = Vector2(55.052, 55.052)
+shape = SubResource("RectangleShape2D_gxa5y")

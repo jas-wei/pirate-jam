@@ -1,0 +1,13 @@
+[gd_resource type="VisualShaderNodeScreenNormalWorldSpace" script_class="ItemData" load_steps=3 format=3 uid="uid://ctwcdy13vgcxo"]
+
+[ext_resource type="Texture2D" uid="uid://bidiki2tmypac" path="res://assets/Items/shield.png" id="1_we8ig"]
+[ext_resource type="Script" path="res://scripts/player/GUI/item_data.gd" id="2_tjxup"]
+
+[resource]
+script = ExtResource("2_tjxup")
+type = 1
+item_name = "Shield"
+item_damage = 0
+item_defense = 100
+description = "Shield for stop hurt."
+item_texture = ExtResource("1_we8ig")

@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="pirate-jam"
-run/main_scene="res://scenes/level1.1.tscn"
+run/main_scene="res://scenes/Levels/level1.1.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="res://scenes/level1.tscn"
+
+[autoload]
+
+Signals="*res://scripts/singletons/signals.gd"
+SignalBus="*res://scripts/signal_bus.gd"
 
 [gui]
 

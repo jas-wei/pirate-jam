@@ -1,40 +1,61 @@
 extends CharacterBody2D
+class_name Player
 
 signal healthChanged
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var speed: float = 250.0
+
+# Gets default gravity value from project settings
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var direction: Vector2 = Vector2.ZERO
+
+signal facingDirectionChanged(facing_right: bool)
 
 @export var maxHealth = 30
-@onready var currentHealth = 0
+@export var attacking = false
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var currentHealth = 0
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var stateMachine: CharacterStateMachine = $CharacterStateMachine
 
 func _ready():
+	animation_tree.active = true
 	healthChanged.emit()
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if (Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("up")) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	#movements
-	if Input.is_action_pressed("left"):
-		animated_sprite_2d.flip_h = true
-		animated_sprite_2d.play("run")
-		velocity.x = -SPEED
-	elif Input.is_action_pressed("right"):
-		animated_sprite_2d.flip_h = false
-		animated_sprite_2d.play("run")
-		velocity.x = SPEED
+		velocity.y += gravity * delta
+	
+	# Get the input direction and handle the movement/acceleration
+	direction = Input.get_vector("left", "right", "up", "down")
+	
+	if direction.x != 0 && stateMachine.check_if_can_move():
+		velocity.x = direction.x * speed
 	else:
-		animated_sprite_2d.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if !is_on_floor():
-		animated_sprite_2d.play("jump")
-
+		velocity.x = move_toward(velocity.x, 0, speed)
+		
 	move_and_slide()
+	update_animation_parameters()
+	update_facing_direction()
+
+func attack():
+	attacking = true
+	#animation.play("Attack")
+	
+func update_animation_parameters():
+	animation_tree.set("parameters/Move/blend_position", direction.x)
+
+		
+func update_facing_direction():
+	if direction.x > 0:
+		sprite.flip_h = false
+	elif direction.x < 0:
+		sprite.flip_h = true
+		
+	emit_signal("facingDirectionChanged", !sprite.flip_h)

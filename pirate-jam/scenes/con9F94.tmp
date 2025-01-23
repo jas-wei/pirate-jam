@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://b83y4dp3nnqli"]
+
+[ext_resource type="Script" path="res://scripts/connect_dots.gd" id="1_kawrp"]
+[ext_resource type="Texture2D" uid="uid://dxjblqom4jobv" path="res://assets/circle-32.png" id="2_2wnjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j262"]
+size = Vector2(108, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxa5y"]
+
+[node name="connect_dots" type="Node2D"]
+position = Vector2(363, 134)
+scale = Vector2(0.49, 0.49)
+script = ExtResource("1_kawrp")
+
+[node name="line_layer" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="line_layer"]
+position = Vector2(610.37, 96)
+points = PackedVector2Array(0, 0, 0, 0)
+
+[node name="dot1" type="Area2D" parent="." groups=["vertices"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="dot1"]
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot1"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot2" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(402.041, -0.0408325)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot2"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot2"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot3" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(844.898, -2.04086)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot3"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot3"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot4" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(-2.04077, 357.143)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot4"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot4"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot5" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(412.245, 344.898)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot5"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot5"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot6" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(832.653, 365.306)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot6"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot6"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot7" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(-4.08154, 714.286)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot7"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot7"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot8" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(412.245, 716.326)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot8"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot8"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="dot9" type="Area2D" parent="." groups=["vertices"]]
+position = Vector2(828.571, 724.49)
+
+[node name="Sprite2D" type="Sprite2D" parent="dot9"]
+position = Vector2(2, 1)
+texture = ExtResource("2_2wnjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dot9"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_0j262")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(416.327, 342.857)
+scale = Vector2(55.052, 55.052)
+shape = SubResource("RectangleShape2D_gxa5y")
+
+[connection signal="input_event" from="dot1" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot1" to="." method="_on_dot_1_mouse_entered"]
+[connection signal="input_event" from="dot2" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot2" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot3" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot3" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot4" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot4" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot5" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot5" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot6" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot6" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot7" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot7" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot8" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot8" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="input_event" from="dot9" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="dot9" to="." method="_on_dot_2_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
