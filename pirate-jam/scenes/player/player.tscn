@@ -345,6 +345,7 @@ graph_offset = Vector2(0, 19.3117)
 size = Vector2(13.4006, 35.3357)
 
 [node name="player" type="CharacterBody2D"]
+z_index = 5
 scale = Vector2(1.415, 1.415)
 script = ExtResource("1_qhs6d")
 
