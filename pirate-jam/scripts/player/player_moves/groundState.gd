@@ -6,7 +6,7 @@ class_name GroundState
 @export var airState: State
 @export var attackState: State
 
-func state_process(delta):
+func state_process(_delta):
 	if (!character.is_on_floor()):
 		nextState = airState
 
