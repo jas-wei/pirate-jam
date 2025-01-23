@@ -2,7 +2,7 @@ extends Node2D
 
 
 var Room = preload("res://scenes/level/room.tscn")
-var Player = preload("res://scenes/player.tscn")
+var Player = preload("res://scenes//player/player.tscn")
 var font = preload("res://assets/Fonts/Killer Grandma.ttf")
 
 var tile_size = 16
@@ -92,9 +92,9 @@ func _process(delta):
 	queue_redraw()
 	
 func _input(event): 
-	if event.is_action("ui_select"):
+	if event.is_action("regenerate"):
 		if play_mode:
-			Player.wqueue_free()
+			Player.queue_free()
 		for n in $Rooms.get_children():
 			n.queue_free()
 		path = null
@@ -111,14 +111,28 @@ func _input(event):
 		var current_camera = get_viewport().get_camera_2d()
 		if current_camera:
 			current_camera.enabled = false
-			
-		# Enable player camera
-		var player_camera = player.get_node("Camera2D")
-		if player_camera:
-			player_camera.enabled = true
-			player_camera.make_current()
+		
+		# Create a Camera2D and make it a child of the player
+		var player_camera = Camera2D.new()
+		player.add_child(player_camera)
+		
+		player_camera.enabled = true
+		player_camera.make_current()
 		
 		play_mode = true
+		
+		#var current_camera = get_viewport().get_camera_2d()
+		#if current_camera:
+			#current_camera.enabled = false
+			#
+		## Enable player camera
+		#
+		#var player_camera = player.get_node("Camera2D")
+		#if player_camera:
+			#player_camera.enabled = true
+			#player_camera.make_current()
+		#
+		#play_mode = true
 		
 func find_mst(nodes: Array[Vector2]) -> AStar2D:
 	var path = AStar2D.new()
