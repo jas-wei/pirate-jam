@@ -23,7 +23,7 @@ func _ready():
 	animation_tree.active = true
 	healthChanged.emit()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		attack()
 

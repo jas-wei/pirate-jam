@@ -15,7 +15,7 @@ var direction = 1
 func _ready() -> void:
 	pass
 	
-func take_damage(amount:int)->void:
+func take_damage(_amount:int)->void:
 	print("enemy damaged")
 	
 func _process(delta: float) -> void:
