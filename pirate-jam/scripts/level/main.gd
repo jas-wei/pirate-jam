@@ -7,15 +7,20 @@ var font = preload("res://assets/Fonts/Killer Grandma.ttf")
 
 var tile_size = 16
 var num_rooms = 60
-var min_size = 10
-var max_size = 30
-var hspread = 50000
+var min_size = 5
+var max_size = 15
+var hspread = 5000
 var cull = 0.5
 
 var path
 var player = null
+
 var start_room = null
 var end_room = null
+var shop = null
+var loot_rooms = []
+
+
 var play_mode = false
 @onready var Map = $TileMap
 
@@ -25,10 +30,16 @@ func _ready() -> void:
 	make_rooms()
 	
 func make_rooms():
+	var positions = []
 	for i in range(num_rooms):
 		var pos = Vector2(randi_range(-hspread, hspread), 0)
+		for spot in positions:
+			if (pos.x in range(spot.x - 200, spot.x + 200)) and (pos.y in range(spot.y - 200, spot.y + 200)):
+				pos.x += 10000
+				pos.y += 10000
+		positions.append(pos)
 		var r = Room.instantiate()
-		var w = min_size + randi() % (max_size - min_size)
+		var w = (min_size + randi() % (max_size - min_size)) * 2
 		var h = min_size + randi() % (max_size - min_size)
 		r.make_room(pos, Vector2(w, h) * tile_size)
 		$Rooms.add_child(r)
@@ -41,6 +52,7 @@ func make_rooms():
 			room.queue_free()
 		else:
 			room.freeze = true
+			room.toggle_hitbox()
 			room_positions.append(Vector2(room.position.x, room.position.y))
 			if room.position.x < 0 and room.position.y > 0:
 				start_room = room
@@ -82,7 +94,7 @@ func _process(delta):
 func _input(event): 
 	if event.is_action("ui_select"):
 		if play_mode:
-			Player.queue_free()
+			Player.wqueue_free()
 		for n in $Rooms.get_children():
 			n.queue_free()
 		path = null
@@ -94,7 +106,7 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		player = Player.instantiate()
 		add_child(player)
-		player.position = Vector2(start_room.position.x - 16, start_room.position.y + 32)
+		player.position = start_room.position-Vector2(125, 0)
 		
 		var current_camera = get_viewport().get_camera_2d()
 		if current_camera:
@@ -193,9 +205,13 @@ func carve_path(pos1, pos2):
 	for x in range(pos1.x, pos2.x, x_diff):
 		Map.set_cell(0, Vector2i(x, x_y.y), 0, Vector2i(0, 15))
 		Map.set_cell(0, Vector2i(x, x_y.y + y_diff), 0, Vector2i(0, 15))
+		Map.set_cell(0, Vector2i(x, x_y.y + 2 * y_diff), 0, Vector2i(0, 15))
+		Map.set_cell(0, Vector2i(x, x_y.y + 3 * y_diff), 0, Vector2i(0, 15))
 	for y in range(pos1.y, pos2.y, y_diff):
 		Map.set_cell(0, Vector2i(y_x.x, y), 0, Vector2i(0, 15))
 		Map.set_cell(0, Vector2i(y_x.x + x_diff, y), 0, Vector2i(0, 15))
+		Map.set_cell(0, Vector2i(y_x.x + 2 * x_diff, y), 0, Vector2i(0, 15))
+		Map.set_cell(0, Vector2i(y_x.x + 3 * x_diff, y), 0, Vector2i(0, 15))
 		
 
 		
