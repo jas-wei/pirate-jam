@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://d233csse3wql2"]
+
+[ext_resource type="Script" path="res://ability_bar.gd" id="1_mpjsi"]
+[ext_resource type="PackedScene" uid="uid://8i63uewsgngt" path="res://scenes/UI/ability_button.tscn" id="2_x5tnp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Debug" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 438.0
+offset_right = 42.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 50
+
+[node name="AbilityBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 524.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, 128)
+script = ExtResource("1_mpjsi")
+
+[node name="AbilityButton" parent="AbilityBar" instance=ExtResource("2_x5tnp")]
+layout_mode = 2
+
+[node name="AbilityButton2" parent="AbilityBar" instance=ExtResource("2_x5tnp")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="AbilityButton3" parent="AbilityBar" instance=ExtResource("2_x5tnp")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="AbilityButton4" parent="AbilityBar" instance=ExtResource("2_x5tnp")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
