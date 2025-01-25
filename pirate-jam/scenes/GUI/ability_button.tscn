@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://8i63uewsgngt"]
 
 [ext_resource type="Texture2D" uid="uid://cjbp2khlnej7j" path="res://assets/icon.svg" id="1_b6rtt"]
-[ext_resource type="Script" path="res://ability_button.gd" id="2_uj7oj"]
-[ext_resource type="Texture2D" uid="uid://4g373iqa3c04" path="res://assets/Untitled.png" id="3_km8gt"]
+[ext_resource type="Script" path="res://scripts/UI/ability_button.gd" id="2_mml6m"]
+[ext_resource type="Texture2D" uid="uid://cjmpd4v4g02x" path="res://assets/Untitled.png" id="3_hrtpc"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_6im1r"]
+[sub_resource type="InputEventKey" id="InputEventKey_40ofs"]
 
 [sub_resource type="Shortcut" id="Shortcut_r7wu0"]
-events = [SubResource("InputEventKey_6im1r")]
+events = [SubResource("InputEventKey_40ofs")]
 
 [node name="AbilityButton" type="TextureButton"]
 offset_right = 87.0
@@ -15,7 +15,7 @@ offset_bottom = 86.0
 shortcut = SubResource("Shortcut_r7wu0")
 texture_normal = ExtResource("1_b6rtt")
 stretch_mode = 0
-script = ExtResource("2_uj7oj")
+script = ExtResource("2_mml6m")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
@@ -23,7 +23,7 @@ offset_right = 87.0
 offset_bottom = 87.0
 step = 0.05
 fill_mode = 5
-texture_progress = ExtResource("3_km8gt")
+texture_progress = ExtResource("3_hrtpc")
 tint_progress = Color(0.137255, 0.137255, 0.137255, 0.866667)
 
 [node name="Timer" type="Timer" parent="."]

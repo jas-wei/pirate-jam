@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://smaxs8yiqnij"]
+[gd_scene load_steps=7 format=3 uid="uid://smaxs8yiqnij"]
 
 [ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="1_hxkbu"]
-[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player.tscn" id="2_i1ds4"]
-[ext_resource type="PackedScene" uid="uid://behyohllsu0cs" path="res://scenes/enemy.tscn" id="3_2755b"]
-[ext_resource type="PackedScene" uid="uid://d233csse3wql2" path="res://scenes/UI/ActionBar.tscn" id="3_ujvhe"]
-[ext_resource type="PackedScene" uid="uid://btsos56tdnl3w" path="res://scenes/health_change_manager.tscn" id="4_jjd2u"]
+[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="2_i1ds4"]
+[ext_resource type="PackedScene" uid="uid://d233csse3wql2" path="res://scenes/GUI/ActionBar.tscn" id="3_ujvhe"]
+[ext_resource type="PackedScene" uid="uid://btsos56tdnl3w" path="res://scenes/GUI/health_change_manager.tscn" id="4_jjd2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350t0"]
 texture = ExtResource("1_hxkbu")
@@ -198,11 +197,8 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Enemy" parent="." instance=ExtResource("3_2755b")]
-position = Vector2(-334, 68)
-
 [node name="HealthChangeManager" parent="." instance=ExtResource("4_jjd2u")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("3_ujvhe")]
+[node name="AbilityBar" parent="CanvasLayer" instance=ExtResource("3_ujvhe")]
