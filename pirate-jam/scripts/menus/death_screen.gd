@@ -12,3 +12,12 @@ func _on_main_menu_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	pass # Replace with function body.
+
+
+func _on_ready() -> void:
+	pass
+	#AnimatedSprite2D.play() # Replace with function body.

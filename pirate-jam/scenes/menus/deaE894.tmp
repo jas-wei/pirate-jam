@@ -20,7 +20,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_ctsti")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("5_div55")
 }, {
 "duration": 1.0,
@@ -73,6 +73,7 @@ texture = ExtResource("2_rf174")
 position = Vector2(520, 200)
 scale = Vector2(25, 25)
 sprite_frames = SubResource("SpriteFrames_iytth")
+frame_progress = 0.208888
 speed_scale = 0.75
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
