@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvwiqptd1mqa5"]
+
+[ext_resource type="Script" path="res://scripts/menus/death_screen.gd" id="1_vx168"]
+[ext_resource type="Texture2D" uid="uid://bep6jiw2b2f5l" path="res://assets/Main Menu/finished.jpeg" id="2_3qu13"]
+[ext_resource type="FontFile" uid="uid://y0m4gt5j8v7p" path="res://assets/Fonts/hopefully aleksias favorite.otf" id="3_5q8fp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vx168")
+
+[node name="Finished" type="Sprite2D" parent="."]
+position = Vector2(577.526, 323)
+scale = Vector2(0.663265, 0.663265)
+texture = ExtResource("2_3qu13")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -347.0
+offset_right = 177.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Replay" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Replay"
+expand_icon = true
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "quit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -244.5
+offset_right = 244.5
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.473778, 0.258115, 0.472952, 1)
+theme_override_fonts/font = ExtResource("3_5q8fp")
+theme_override_font_sizes/font_size = 150
+text = "You Finished!"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

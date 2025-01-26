@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmcv1y5y2bwtf"]
+[gd_scene load_steps=12 format=3 uid="uid://bmcv1y5y2bwtf"]
 
 [ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="1_t20pi"]
 [ext_resource type="PackedScene" uid="uid://dei38ql3tcmiy" path="res://scenes/player/health_bar.tscn" id="2_3dd0l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
 [ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="7_nxqlk"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
+[ext_resource type="PackedScene" uid="uid://c7xgnhcy66sd8" path="res://scenes/menus/killzone.tscn" id="8_jflj2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7urid"]
 texture = ExtResource("4_5mpf8")
@@ -172,6 +173,9 @@ texture = ExtResource("4_5mpf8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7urid")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tkj6i"]
+distance = -368.0
+
 [node name="level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -189,6 +193,7 @@ layer_1/tile_data = PackedInt32Array(-327689, 393216, 1, -262153, 393216, 1, -19
 position = Vector2(0.99889, 16.4817)
 scale = Vector2(0.499445, 0.499445)
 zoom = Vector2(2.1, 2.1)
+limit_bottom = 368
 
 [node name="health_bar" parent="." instance=ExtResource("2_3dd0l")]
 script = ExtResource("3_v2xew")
@@ -206,3 +211,8 @@ position = Vector2(101, 75)
 
 [node name="melee enemy3" parent="." instance=ExtResource("7_nxqlk")]
 position = Vector2(28, 85)
+
+[node name="killzone" parent="." instance=ExtResource("8_jflj2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_tkj6i")

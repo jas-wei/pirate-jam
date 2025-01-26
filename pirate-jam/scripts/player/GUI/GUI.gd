@@ -37,8 +37,8 @@ func _on_spells_pressed() -> void:
 		child.show()
 
 func _on_main_menu_pressed() -> void:
-	hideGUI()
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func hideGUI():
 	$Container/Panel/VBoxContainer2/Spells.disabled = false
@@ -47,7 +47,11 @@ func hideGUI():
 	$Container/Inventory.hide()
 	$Container/connect_dots.hide()
 	
-
+func _on_exit_button_pressed() -> void:
+	hideGUI()
+	get_node("Container").hide()
+	connect_dots_script = get_tree().get_nodes_in_group("Connect_dots")[0]
+	get_tree().paused = false
 
 func _on_coin_pickup() -> void:
 	pass # Replace with function body.
