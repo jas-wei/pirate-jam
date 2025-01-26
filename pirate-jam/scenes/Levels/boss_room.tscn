@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf16v35mqcp8l"]
+
+[ext_resource type="PackedScene" uid="uid://brve7m23isov3" path="res://scenes/enemy/golem_boss.tscn" id="1_y2ahe"]
+[ext_resource type="PackedScene" uid="uid://d2ruo5rx0buok" path="res://scenes/player/player.tscn" id="2_naip4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_opi1k"]
+
+[node name="BossRoom" type="Node2D"]
+
+[node name="GolemBoss" parent="." instance=ExtResource("1_y2ahe")]
+position = Vector2(795, 329)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(85, 517)
+shape = SubResource("WorldBoundaryShape2D_opi1k")
+
+[node name="player" parent="." instance=ExtResource("2_naip4")]

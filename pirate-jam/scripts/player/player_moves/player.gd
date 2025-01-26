@@ -17,13 +17,13 @@ signal facingDirectionChanged(facing_right: bool)
 @onready var currentHealth = 0
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var stateMachine: Node = $CharacterStateMachine
+@onready var stateMachine: CharacterStateMachine = $CharacterStateMachine
 
 func _ready():
 	animation_tree.active = true
 	healthChanged.emit()
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		attack()
 

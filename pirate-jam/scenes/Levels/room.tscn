@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://by461b2vxthoi"]
 
-[ext_resource type="Script" path="res://scripts/level/room.gd" id="1_uejht"]
+[ext_resource type="Script" path="res://scripts/level/room.gd" id="1_ridnf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_finuv"]
 
 [node name="Room" type="RigidBody2D"]
 gravity_scale = 0.0
-script = ExtResource("1_uejht")
+script = ExtResource("1_ridnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(512, 487)
