@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvwiqptd1mqa5"]
 
-[ext_resource type="Script" path="res://death_screen.gd" id="1_64pbn"]
-[ext_resource type="Texture2D" uid="uid://bep6jiw2b2f5l" path="res://assets/Main Menu/finished.jpeg" id="2_dw74q"]
-[ext_resource type="FontFile" uid="uid://y0m4gt5j8v7p" path="res://assets/Fonts/hopefully aleksias favorite.otf" id="3_hwicc"]
+[ext_resource type="Script" path="res://death_screen.gd" id="1_vx168"]
+[ext_resource type="Texture2D" uid="uid://bep6jiw2b2f5l" path="res://assets/Main Menu/finished.jpeg" id="2_3qu13"]
+[ext_resource type="FontFile" uid="uid://y0m4gt5j8v7p" path="res://assets/Fonts/hopefully aleksias favorite.otf" id="3_5q8fp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,12 +11,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_64pbn")
+script = ExtResource("1_vx168")
 
 [node name="Finished" type="Sprite2D" parent="."]
 position = Vector2(577.526, 323)
 scale = Vector2(0.663265, 0.663265)
-texture = ExtResource("2_dw74q")
+texture = ExtResource("2_3qu13")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -61,7 +61,7 @@ offset_right = 244.5
 offset_bottom = 152.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.473778, 0.258115, 0.472952, 1)
-theme_override_fonts/font = ExtResource("3_hwicc")
+theme_override_fonts/font = ExtResource("3_5q8fp")
 theme_override_font_sizes/font_size = 150
 text = "You Finished!"
 

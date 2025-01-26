@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://hcppknkrhrwp"]
+
+[ext_resource type="Script" path="res://homo.gd" id="1_ra6na"]
+[ext_resource type="Script" path="res://body.gd" id="2_vwpyc"]
+[ext_resource type="Texture2D" uid="uid://dbk43gm3duark" path="res://assets/character/2d/Idle/T_UE4Robot_IdleStand_D.TGA" id="3_1moy5"]
+[ext_resource type="Script" path="res://element.gd" id="4_kvlm1"]
+[ext_resource type="Texture2D" uid="uid://dyij1dcxhbjer" path="res://assets/character/skills32x32.png" id="5_0y8lh"]
+[ext_resource type="Script" path="res://attack.gd" id="6_1gmyt"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ra6na")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.899488, 0.860662, 0.965434, 1)
+
+[node name="skeloton" type="Node2D" parent="."]
+position = Vector2(570, 120)
+scale = Vector2(4, 4)
+
+[node name="body" type="Node2D" parent="skeloton"]
+script = ExtResource("2_vwpyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeloton/body"]
+position = Vector2(-0.5, -8)
+scale = Vector2(0.742188, 0.742188)
+texture = ExtResource("3_1moy5")
+hframes = 4
+vframes = 2
+
+[node name="element" type="Node2D" parent="skeloton"]
+script = ExtResource("4_kvlm1")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeloton/element"]
+position = Vector2(-0.499998, -10)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("5_0y8lh")
+hframes = 5
+vframes = 4
+frame = 1
+
+[node name="attack" type="Node2D" parent="skeloton"]
+position = Vector2(-0.5, 8)
+script = ExtResource("6_1gmyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="skeloton/attack"]
+
+[node name="creator screen" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="creator screen"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -448.0
+offset_right = 375.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.750122, 0.647586, 0.904907, 1)
+
+[node name="details" type="ColorRect" parent="creator screen/ColorRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 740.0
+offset_bottom = 60.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="creator screen/ColorRect/details"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+
+[node name="TextEdit" type="TextEdit" parent="creator screen/ColorRect/details"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

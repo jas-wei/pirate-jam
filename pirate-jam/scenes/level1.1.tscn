@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pe8m4g371m24" path="res://scenes/GUI/Inventory/Resources/coin.tscn" id="6_j7tpd"]
 [ext_resource type="PackedScene" uid="uid://c8dbagjrya0lm" path="res://scenes/enemy/melee_enemy.tscn" id="6_y03u4"]
 [ext_resource type="PackedScene" uid="uid://57we0ndu6cs" path="res://scenes/GUI/GUI.tscn" id="8_45tsc"]
-[ext_resource type="PackedScene" uid="uid://c7xgnhcy66sd8" path="res://killzone.tscn" id="8_b5maa"]
+[ext_resource type="PackedScene" uid="uid://c7xgnhcy66sd8" path="res://scenes/menus/killzone.tscn" id="8_b5maa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50cfi"]
 texture = ExtResource("4_5mpf8")

@@ -80,7 +80,8 @@ offset_right = 440.0
 offset_bottom = 118.0
 scale = Vector2(0.33, 0.33)
 
+[connection signal="pressed" from="Container/Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Inventory" to="." method="_on_inventory_pressed"]
-[connection signal="pressed" from="Container/Panel/VBoxContainer2/Spells" to="." method="_on_achievements_pressed"]
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Spells" to="." method="_on_spells_pressed"]
+[connection signal="pressed" from="Container/Panel/VBoxContainer2/Spells" to="." method="_on_achievements_pressed"]
 [connection signal="pressed" from="Container/Panel/VBoxContainer2/Main_Menu" to="." method="_on_main_menu_pressed"]

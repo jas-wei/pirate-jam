@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk5thl2jor3x5"]
 
-[ext_resource type="Script" path="res://scenes/customize_homo.gd" id="1_y57o1"]
+[ext_resource type="Script" path="res://customize_homo.gd" id="1_y57o1"]
 [ext_resource type="Texture2D" uid="uid://dbk43gm3duark" path="res://assets/character/2d/Idle/T_UE4Robot_IdleStand_D.TGA" id="2_wwas4"]
 [ext_resource type="Texture2D" uid="uid://dyij1dcxhbjer" path="res://assets/character/skills32x32.png" id="3_qhiw2"]
 

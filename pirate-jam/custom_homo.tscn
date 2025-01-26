@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx758g02031j6"]
+
+[ext_resource type="PackedScene" uid="uid://dk5thl2jor3x5" path="res://scenes/customize_homo.tscn" id="1_x7bbu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_x7bbu")]

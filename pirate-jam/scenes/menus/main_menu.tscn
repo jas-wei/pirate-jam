@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://bopkfjhix5p6f"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7b4ea"]
-[ext_resource type="FontFile" uid="uid://y0m4gt5j8v7p" path="res://assets/Fonts/hopefully aleksias favorite.otf" id="2_5q83d"]
-[ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="3_hmgqo"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_bs7y1"]
+[ext_resource type="Texture2D" uid="uid://fsnj5j1l08h5" path="res://assets/world_tileset.png" id="2_j0s8p"]
+[ext_resource type="FontFile" uid="uid://y0m4gt5j8v7p" path="res://assets/Fonts/hopefully aleksias favorite.otf" id="3_fjxa2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sx27e"]
-texture = ExtResource("3_hmgqo")
+texture = ExtResource("2_j0s8p")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -175,7 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7b4ea")
+script = ExtResource("1_bs7y1")
 
 [node name="TileMap2" type="TileMap" parent="."]
 light_mask = 4
@@ -233,12 +233,12 @@ offset_left = -158.5
 offset_right = 158.5
 offset_bottom = 105.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_5q83d")
+theme_override_fonts/font = ExtResource("3_fjxa2")
 theme_override_font_sizes/font_size = 150
 text = "Let Me Touch You!"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Build your Homo" to="." method="_on_build_your_homo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Build your Homo" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Build your Homo" to="." method="_on_build_your_homo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

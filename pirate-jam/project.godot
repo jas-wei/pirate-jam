@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Signals="*res://scripts/singletons/signals.gd"
+Global="*res://scripts/Global.gd"
 
 [gui]
 
