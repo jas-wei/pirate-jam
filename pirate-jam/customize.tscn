@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvmt1tm8p7os"]
+
+[ext_resource type="PackedScene" uid="uid://b83y4dp3nnqli" path="res://scenes/GUI/connect_dots.tscn" id="1_bcuu8"]
+[ext_resource type="Script" path="res://scripts/customize.gd" id="1_t2vf8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 528.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2vf8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -402.0
+offset_top = -230.0
+offset_right = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="melee" type="Button" parent="MarginContainer/VBoxContainer" groups=["vertices"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "melee
+"
+
+[node name="range" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "range"
+
+[node name="connect_dots" parent="." instance=ExtResource("1_bcuu8")]
+visible = false
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/melee" to="." method="_on_melee_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/range" to="." method="_on_range_pressed"]

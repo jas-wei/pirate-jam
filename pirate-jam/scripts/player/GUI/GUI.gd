@@ -50,8 +50,12 @@ func hideGUI():
 func _on_exit_button_pressed() -> void:
 	hideGUI()
 	get_node("Container").hide()
-	connect_dots_script = get_tree().get_nodes_in_group("Connect_dots")[0]
+	connect_dots_script.dots.clear()
+	var children = $Container/connect_dots/line_layer.get_children()
+	for child in children:
+		child.queue_free()
 	get_tree().paused = false
+	#i think this works but there might be some extra lines that we dont need...
 
 func _on_coin_pickup() -> void:
 	pass # Replace with function body.
