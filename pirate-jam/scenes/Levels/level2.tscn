@@ -190,7 +190,6 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-122, -60)
-scale = Vector2(1, 1)
 zoom = Vector2(2.3, 2.3)
 process_callback = 0
 position_smoothing_enabled = true

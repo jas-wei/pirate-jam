@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var Room = preload("res://scenes/level/room.tscn")
+var Room = preload("res://scenes/Levels/bossroom.tscn")
 var Player = preload("res://scenes//player/player.tscn")
 var font = preload("res://assets/Fonts/Killer Grandma.ttf")
 
