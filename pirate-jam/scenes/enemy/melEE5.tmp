@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8dbagjrya0lm"]
+[gd_scene load_steps=15 format=3 uid="uid://c8dbagjrya0lm"]
 
 [ext_resource type="Script" path="res://scenes/enemy/melee_enemy.gd" id="1_a8ern"]
 [ext_resource type="Texture2D" uid="uid://dhxbq3b3jfs10" path="res://assets/Minifantasy_Creatures_v3.2_Free_Version/Minifantasy_Creatures_Assets/Slimes/Blue _Slime/BlueSlimeIdle.png" id="1_rtp1b"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_2ux81"]
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_c2wgh"]
-[ext_resource type="Script" path="res://scenes/enemy/finitestatemachine_me.gd" id="5_0a0lm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muwdd"]
 size = Vector2(18.375, 10.625)
@@ -73,9 +72,6 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwqaj"]
-size = Vector2(315.75, 45)
-
 [node name="melee enemy" type="Node2D"]
 script = ExtResource("1_a8ern")
 
@@ -131,16 +127,3 @@ offset_top = -16.0
 offset_right = 42.0
 offset_bottom = 2.0
 text = "Enemy"
-
-[node name="player detection" type="Area2D" parent="."]
-
-[node name="player detection" type="CollisionShape2D" parent="player detection"]
-position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_pwqaj")
-
-[node name="finitestatemachine me" type="Node2D" parent="."]
-script = ExtResource("5_0a0lm")
-
-[node name="idle" type="Node2D" parent="finitestatemachine me"]
-
-[node name="chase" type="Node2D" parent="finitestatemachine me"]

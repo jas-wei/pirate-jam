@@ -5,6 +5,7 @@ extends Node2D
 const SPEED=40
 var direction = 1
 
+#@onready var player get_parent().find_child("player")
 @onready var ray_castright: RayCast2D = $RayCastright
 @onready var ray_castleft: RayCast2D = $RayCastleft
 @onready var ray_castdown: RayCast2D = $RayCastdown
@@ -19,6 +20,7 @@ func take_damage(amount:int)->void:
 	print("enemy damaged")
 	
 func _process(delta: float) -> void:
+	#direction = player.position - position
 	if ray_castright.is_colliding():
 		direction=-1
 		animated_sprite_2d.flip_h=true
