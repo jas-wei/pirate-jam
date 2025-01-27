@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 var skills: Array
 @onready var debug: Label = $"../Debug"
