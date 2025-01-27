@@ -17,22 +17,24 @@ const earth_sigil = [["dot1", "dot3"], ["dot1", "dot8"], ["dot3", "dot8"], ["dot
 
 func _ready() -> void:
 	# Populate the vertices array with all Area2D children
+	print("here")
 	vertices = get_tree().get_nodes_in_group("vertices")
-	button = get_tree().get_nodes_in_group("Button_container")[0].get_child(1)
+	#print("here2")
+	#print(get_tree().get_nodes_in_group("Button_container"))
+	#button = get_tree().get_nodes_in_group("Button_container")[0].get_child(1)
 	#print (button)
 
 
 func _input(event: InputEvent) -> void:
-	if button.disabled == true:
-		if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
-			if compare_edges(dots, air_sigil):
-				print("air sigil drawn")
-			if compare_edges(dots, fire_sigil):
-				print("fire sigil drawn")
-			if compare_edges(dots, water_sigil):
-				print("water sigil drawn")
-			if compare_edges(dots, earth_sigil):
-				print("earth sigil drawn")
+	if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
+		if compare_edges(dots, air_sigil):
+			print("air sigil drawn")
+		if compare_edges(dots, fire_sigil):
+			print("fire sigil drawn")
+		if compare_edges(dots, water_sigil):
+			print("water sigil drawn")
+		if compare_edges(dots, earth_sigil):
+			print("earth sigil drawn")
 		
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
