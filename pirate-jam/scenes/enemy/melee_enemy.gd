@@ -17,6 +17,7 @@ func _ready() -> void:
 	pass
 	
 func take_damage(amount:int)->void:
+	#change progress bar
 	print("enemy damaged")
 	
 func _process(delta: float) -> void:
