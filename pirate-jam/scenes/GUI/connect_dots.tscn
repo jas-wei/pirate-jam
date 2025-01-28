@@ -1,8 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b83y4dp3nnqli"]
 
 [ext_resource type="Script" path="res://scripts/UI/connect_dots.gd" id="1_sp31m"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5pci"]
+[ext_resource type="Texture2D" uid="uid://dxjblqom4jobv" path="res://assets/Items/circle-32.png" id="2_6q4b6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j262"]
 size = Vector2(108, 108)
@@ -28,7 +27,7 @@ points = PackedVector2Array(0, 0, 0, 0)
 [node name="dot1" type="Area2D" parent="." groups=["vertices"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="dot1"]
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot1"]
 position = Vector2(0, -1)
@@ -39,7 +38,7 @@ position = Vector2(402.041, -0.0408325)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot2"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot2"]
 position = Vector2(3, 0)
@@ -50,7 +49,7 @@ position = Vector2(844.898, -2.04086)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot3"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot3"]
 position = Vector2(3, 0)
@@ -61,7 +60,7 @@ position = Vector2(-2.04077, 357.143)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot4"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot4"]
 position = Vector2(3, 0)
@@ -72,7 +71,7 @@ position = Vector2(412.245, 357.143)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot5"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot5"]
 position = Vector2(3, 0)
@@ -83,7 +82,7 @@ position = Vector2(834.694, 357.143)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot6"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot6"]
 position = Vector2(3, 0)
@@ -94,7 +93,7 @@ position = Vector2(-4.08154, 714.286)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot7"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot7"]
 position = Vector2(3, 0)
@@ -105,7 +104,7 @@ position = Vector2(412.245, 716.326)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot8"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot8"]
 position = Vector2(3, 0)
@@ -116,7 +115,7 @@ position = Vector2(828.571, 724.49)
 
 [node name="Sprite2D" type="Sprite2D" parent="dot9"]
 position = Vector2(2, 1)
-texture = SubResource("CompressedTexture2D_u5pci")
+texture = ExtResource("2_6q4b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot9"]
 position = Vector2(3, 0)
