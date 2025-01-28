@@ -19,7 +19,7 @@ func _ready() -> void:
 	# Populate the vertices array with all Area2D children
 	#print("here")
 	vertices = get_tree().get_nodes_in_group("vertices")
-	button = get_tree().get_nodes_in_group("Button_container")[0].get_child(1)
+	#button = get_tree().get_nodes_in_group("Button_container")[0].get_child(1)
 	#print (button)
 
 

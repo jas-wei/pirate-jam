@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://pvmt1tm8p7os"]
+[gd_scene load_steps=4 format=3 uid="uid://b6tp54b8e1rde"]
 
 [ext_resource type="PackedScene" uid="uid://b83y4dp3nnqli" path="res://scenes/GUI/connect_dots.tscn" id="1_bcuu8"]
 [ext_resource type="Script" path="res://scripts/customize.gd" id="1_t2vf8"]
+[ext_resource type="Script" path="res://scripts/connect_dots.gd" id="3_cmbdy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 528.0
-offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t2vf8")
@@ -42,6 +41,7 @@ theme_override_font_sizes/font_size = 75
 text = "range"
 
 [node name="connect_dots" parent="." instance=ExtResource("1_bcuu8")]
+script = ExtResource("3_cmbdy")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/melee" to="." method="_on_melee_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/range" to="." method="_on_range_pressed"]
