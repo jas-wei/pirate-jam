@@ -7,14 +7,15 @@
 
 [node name="BossRoom" type="Node2D"]
 
+[node name="player" parent="." instance=ExtResource("2_naip4")]
+position = Vector2(342, 114)
+
 [node name="GolemBoss" parent="." instance=ExtResource("1_y2ahe")]
-position = Vector2(795, 329)
+position = Vector2(902, 273)
 scale = Vector2(3, 3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(85, 517)
+position = Vector2(391, 455)
 shape = SubResource("WorldBoundaryShape2D_opi1k")
-
-[node name="player" parent="." instance=ExtResource("2_naip4")]

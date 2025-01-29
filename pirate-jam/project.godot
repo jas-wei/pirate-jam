@@ -21,6 +21,10 @@ config/icon="res://assets/icon.svg"
 Signals="*res://scripts/singletons/signals.gd"
 SignalBus="*res://scripts/signal_bus.gd"
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/custom="res://default.tres"

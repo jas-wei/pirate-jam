@@ -1,10 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://brve7m23isov3"]
+[gd_scene load_steps=27 format=3 uid="uid://brve7m23isov3"]
 
 [ext_resource type="Texture2D" uid="uid://dcvyi822hxgn4" path="res://assets/Enemies/Mecha-stone Golem 0.1/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_0x5mx"]
+[ext_resource type="Script" path="res://scenes/enemy/golem_boss.gd" id="1_4r3du"]
 [ext_resource type="Texture2D" uid="uid://5v3pf8r704dp" path="res://assets/Enemies/Mecha-stone Golem 0.1/Mecha-stone Golem 0.1/weapon PNG/Laser_sheet.png" id="2_3vox4"]
 [ext_resource type="Script" path="res://scripts/enemy/finite_state_machine.gd" id="3_jbrut"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_state.gd" id="3_vg033"]
 [ext_resource type="Script" path="res://scripts/enemy/idle.gd" id="4_dobiu"]
+[ext_resource type="Script" path="res://scripts/enemy/follow.gd" id="5_so85l"]
+[ext_resource type="Script" path="res://scripts/enemy/melee_attack.gd" id="7_452xh"]
+[ext_resource type="Script" path="res://scripts/enemy/laser_beam.gd" id="8_gi5ge"]
+[ext_resource type="Script" path="res://scripts/enemy/homing_missile.gd" id="9_cjio7"]
+[ext_resource type="Script" path="res://scripts/enemy/dash.gd" id="9_mxx1i"]
+[ext_resource type="PackedScene" uid="uid://b2x34johwm8np" path="res://scenes/enemy/bullet.tscn" id="10_g10pg"]
 
 [sub_resource type="Animation" id="Animation_gl6j4"]
 length = 0.001
@@ -63,7 +70,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -91,7 +98,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -137,7 +144,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -165,7 +172,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -222,6 +229,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 0]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FiniteStateMachine/LaserBeam")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.875),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_target"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xexle"]
 resource_name = "laser_cast"
@@ -241,7 +262,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -271,7 +292,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -300,7 +321,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Pivot/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -337,6 +358,7 @@ radius = 107.032
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("1_4r3du")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0x5mx")
@@ -432,26 +454,29 @@ script = ExtResource("3_jbrut")
 script = ExtResource("4_dobiu")
 
 [node name="Follow" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_vg033")
+script = ExtResource("5_so85l")
 
 [node name="MeleeAttack" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_vg033")
+script = ExtResource("7_452xh")
 
 [node name="LaserBeam" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_vg033")
+script = ExtResource("8_gi5ge")
 
 [node name="ArmorBuff" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_vg033")
 
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_vg033")
+script = ExtResource("9_mxx1i")
 
 [node name="Death" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("3_vg033")
 
 [node name="HomingMissile" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("3_vg033")
+script = ExtResource("9_cjio7")
+bullet_node = ExtResource("10_g10pg")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]

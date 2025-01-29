@@ -7,7 +7,7 @@ extends EnemyState
 var player_entered: bool = false:
 	set(value):
 		player_entered = value
-		collision.set_deferred("visible", value)
+		collision.set_deferred("disabled", value)
 		progress_bar.set_deferred("visible", value)
 		
 func transition():
@@ -17,4 +17,6 @@ func transition():
 
 
 func _on_player_detection_body_entered(body: Node2D) -> void:
-	player_entered = true
+	if body.name=="player":
+		player_entered = true
+		print("no")
