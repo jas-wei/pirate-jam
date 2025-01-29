@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d233csse3wql2"]
 
-[ext_resource type="Script" path="res://ability_bar.gd" id="1_mpjsi"]
-[ext_resource type="PackedScene" uid="uid://8i63uewsgngt" path="res://scenes/UI/ability_button.tscn" id="2_x5tnp"]
+[ext_resource type="Script" path="res://scripts/UI/ability_bar.gd" id="1_nyj01"]
+[ext_resource type="PackedScene" uid="uid://8i63uewsgngt" path="res://scenes/GUI/ability_button.tscn" id="2_x5tnp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,7 +36,7 @@ offset_right = 128.0
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(150, -278)
-script = ExtResource("1_mpjsi")
+script = ExtResource("1_nyj01")
 
 [node name="AbilityButton" parent="Control" instance=ExtResource("2_x5tnp")]
 layout_mode = 2
