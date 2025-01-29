@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bde6sw8qoqld8"]
+
+[ext_resource type="Script" path="res://scenes/arrow.gd" id="1_2x1vs"]
+[ext_resource type="Texture2D" uid="uid://cjbp2khlnej7j" path="res://assets/icon.svg" id="2_8pabf"]
+[ext_resource type="Script" path="res://scripts/projectile_hit_box.gd" id="3_tw1om"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cwmut"]
+radius = 2.0
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_2x1vs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+rotation = 1.5708
+scale = Vector2(0.0255096, 0.2205)
+texture = ExtResource("2_8pabf")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.25, 0.4)
+enable_node_path = NodePath("../ProjectileHitBox/CollisionShape2D")
+
+[node name="ProjectileHitBox" type="Area2D" parent="."]
+rotation = 1.5708
+script = ExtResource("3_tw1om")
+damage = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileHitBox"]
+shape = SubResource("CapsuleShape2D_cwmut")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="body_entered" from="ProjectileHitBox" to="ProjectileHitBox" method="_on_body_entered"]

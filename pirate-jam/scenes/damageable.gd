@@ -1,7 +1,7 @@
 extends Node
 class_name Damageable
 
-@export var health: float = 20 :
+@export var health: float = 50 :
 	get:
 		return health
 	set(value):

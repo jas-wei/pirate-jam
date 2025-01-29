@@ -8,6 +8,8 @@ signal healthChanged
 # Gets default gravity value from project settings
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: Vector2 = Vector2.ZERO
+var ranged_cooldown = true
+var arrow = preload("res://scenes/arrow.tscn")
 
 signal facingDirectionChanged(facing_right: bool)
 
@@ -41,6 +43,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
 	move_and_slide()
+	
+	var mouse_pos = get_global_mouse_position()
+	$Marker2D.look_at(mouse_pos)
+	
+	if Input.is_action_just_pressed("right_mouse") and ranged_cooldown:
+		ranged_cooldown = false
+		var arrow_instance = arrow.instantiate()
+		arrow_instance.rotation = $Marker2D.rotation
+		arrow_instance.global_position = $Marker2D.global_position
+		add_child(arrow_instance)
+		
+		await get_tree().create_timer(0.4).timeout
+		ranged_cooldown = true
+	
 	update_animation_parameters()
 	update_facing_direction()
 
@@ -51,7 +67,6 @@ func attack():
 func update_animation_parameters():
 	animation_tree.set("parameters/Move/blend_position", direction.x)
 
-		
 func update_facing_direction():
 	if direction.x > 0:
 		sprite.flip_h = false
