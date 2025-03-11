@@ -13,6 +13,10 @@
 [ext_resource type="Script" path="res://scripts/enemy/dash.gd" id="9_mxx1i"]
 [ext_resource type="PackedScene" uid="uid://b2x34johwm8np" path="res://scenes/enemy/bullet.tscn" id="10_g10pg"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc7mb"]
+radius = 18.8
+height = 44.0
+
 [sub_resource type="Animation" id="Animation_gl6j4"]
 length = 0.001
 tracks/0/type = "value"
@@ -347,18 +351,18 @@ _data = {
 "ranged_attack": SubResource("Animation_a3ysv")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7hlp"]
-radius = 14.8
-height = 40.8
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2wxi1"]
 radius = 107.032
 
-[node name="GolemBoss" type="CharacterBody2D"]
+[node name="GolemBoss" type="CharacterBody2D" groups=["boss"]]
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_4r3du")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.2, -4)
+shape = SubResource("CapsuleShape2D_bc7mb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0x5mx")
@@ -437,10 +441,6 @@ text = "debug
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.6, -1.6)
-shape = SubResource("CapsuleShape2D_k7hlp")
-
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0
 
@@ -479,4 +479,5 @@ bullet_node = ExtResource("10_g10pg")
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]

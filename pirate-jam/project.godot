@@ -24,6 +24,7 @@ SignalBus="*res://scripts/signal_bus.gd"
 [global_group]
 
 player=""
+boss=""
 
 [gui]
 

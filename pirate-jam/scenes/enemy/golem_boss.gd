@@ -41,3 +41,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage():
 	health -= 10 + DEF
+
+
+func _on_mouse_entered() -> void:
+	print("asdas")
